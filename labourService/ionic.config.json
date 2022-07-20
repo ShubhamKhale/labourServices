@@ -1,0 +1,7 @@
+{
+  "name": "labourService",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
