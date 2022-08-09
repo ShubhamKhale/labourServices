@@ -26,7 +26,7 @@ import {
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
 import "./selectedServices.css";
-const Tab2: React.FC = () => {
+const Tab1: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const [searchText, setSearchText] = useState("");
   // const [trigger, setTrigger] = useState("open-modal");
@@ -162,7 +162,10 @@ const Tab2: React.FC = () => {
           </IonContent>
         </IonModal>
 
-        <IonCard className="card">
+        <IonGrid className="gridServiceContainer">
+          <IonRow>
+            <IonCol>
+            <IonCard className="serviceCard serviceCardLeft">
           <IonCardHeader>
             <IonButton onClick={() => setIsOpen(true)}>Electrician</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
@@ -171,8 +174,9 @@ const Tab2: React.FC = () => {
             Close
           </IonCardContent>
         </IonCard>
-
-        <IonCard className="card">
+            </IonCol>
+            <IonCol>
+            <IonCard className="serviceCard serviceCardRight">
           <IonCardHeader>
             <IonButton onClick={() => setIsOpen(true)}>Plumber</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
@@ -181,8 +185,12 @@ const Tab2: React.FC = () => {
             Close
           </IonCardContent>
         </IonCard>
+            </IonCol>
+          </IonRow>
 
-        <IonCard className="card">
+          <IonRow>
+          <IonCol>
+          <IonCard className="serviceCard serviceCardLeft">
           <IonCardHeader>
             <IonButton onClick={() => setIsOpen(true)}>Mason</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
@@ -191,8 +199,9 @@ const Tab2: React.FC = () => {
             Close
           </IonCardContent>
         </IonCard>
-
-        <IonCard className="card">
+          </IonCol>
+            <IonCol>
+            <IonCard className="serviceCard serviceCardRight">
           <IonCardHeader>
             <IonButton onClick={() => setIsOpen(true)}>Carpenter</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
@@ -201,8 +210,11 @@ const Tab2: React.FC = () => {
             Close
           </IonCardContent>
         </IonCard>
-
-        <IonCard className="card">
+            </IonCol>
+          </IonRow>
+          <IonRow>
+          <IonCol>
+          <IonCard className="serviceCard serviceCardLeft">
           <IonCardHeader>
             <IonButton onClick={() => setIsOpen(true)}>Painter</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
@@ -211,8 +223,9 @@ const Tab2: React.FC = () => {
             Close
           </IonCardContent>
         </IonCard>
-
-        <IonCard className="card">
+          </IonCol>
+            <IonCol>
+            <IonCard className="serviceCard serviceCardRight">
           <IonCardHeader>
             <IonButton onClick={() => setIsOpen(true)}>Pest Controller</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
@@ -221,10 +234,14 @@ const Tab2: React.FC = () => {
             Close
           </IonCardContent>
         </IonCard>
+            </IonCol>
+          </IonRow>
+        </IonGrid>
+        
 
         <IonSlides options={slideOpts} className="slide">
           <IonSlide className="slider-card">
-            <img src="../../assets/image1.jpg" alt="Image1" />
+            <img src="../../assets/image1.jpg" alt="Image1"/>
             <IonCardHeader className="hover">
               <a href="/">Hello</a>
             </IonCardHeader>
@@ -253,7 +270,7 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default Tab1;
 
 // function present(arg0: { onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => void; }) {
 //   throw new Error("Function not implemented.");

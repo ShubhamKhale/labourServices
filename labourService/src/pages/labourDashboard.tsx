@@ -22,7 +22,7 @@ import {
 import "./labourDashboard.css";
 import { settingsOutline } from "ionicons/icons";
 import { useState } from "react";
-const Tab1: React.FC = () => {
+const Tab2: React.FC = () => {
   const [labourStatusMode, setLabourStatusMode] = useState("warning");
   const [labourStatus, setLabourStatus] = useState("INACTIVE");
   const [completedServices, setCompletedServicest] = useState(0);
@@ -148,4 +148,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default Tab2;

@@ -130,18 +130,32 @@ ion-modal#example-modal {
 
 
 /* Mitesh Page */
-.card{
-  width: 160px;
-  height: 100px;
-  float: left;
+
+.gridServiceContainer{
   text-align: center;
-  background-color: gold;
-  border-radius: 15px;
-  display: grid;
-  justify-content: center;
-  left: 24px;
-  top: 29px;
-  align-items: end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-direction: column;
+}
+
+.serviceCard{
+  width: 160px;
+    height: 100px;
+    /* float: left; */
+    text-align: center;
+    background-color: gold;
+    border-radius: 15px;
+}
+
+.serviceCardRight{
+  margin-left: 7px;
+    margin-top: 14px;
+}
+.serviceCardLeft{
+  margin-right: 7px;
+    margin-top: 14px;
 }
 
 #head1{
@@ -163,13 +177,12 @@ ion-slides {
   height: 250px;
   width: 355px;
   top: 45px;
-  border-radius: 25px;
+  border-radius: 16px;
 }  
 
 .slider-card{
   height: 230px; 
-  width: 100% !important; 
-  opacity: 0.5;
+  width: 100% !important;
   z-index: -1;
 }
 
