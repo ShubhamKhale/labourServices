@@ -131,7 +131,7 @@ ion-modal#example-modal {
 
 /* Mitesh Page */
 .card{
-  width: 150px;
+  width: 160px;
   height: 100px;
   float: left;
   text-align: center;
@@ -141,7 +141,7 @@ ion-modal#example-modal {
   justify-content: center;
   left: 24px;
   top: 29px;
-  cursor: pointer;
+  align-items: end;
 }
 
 #head1{
@@ -173,19 +173,6 @@ ion-slides {
   z-index: -1;
 }
 
-
-img{
-  border-radius: 25px;
-  object-fit: cover;
-  transition: 600ms all ease-in-out;
-}
-
-a{
-  background-color: transparent;
-  color: white;
-  text-decoration: none;
-}
-
 .swiper-slide-active{
   transform: scale(1.05,1.05);
 }
@@ -194,15 +181,18 @@ a{
   transition: 400ms all ease-in-out;
 }
 
-
-/* image */
-img {
+img{
+  border-radius: 25px;
   position: absolute;
+  opacity: 1;
 }
 
-.img {
-  opacity: 1;
-  z-index: -1;
+a{
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
 }
 
 

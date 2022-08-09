@@ -30,6 +30,7 @@ const Tab2: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const [searchText, setSearchText] = useState("");
   // const [trigger, setTrigger] = useState("open-modal");
+  const [isOpen, setIsOpen] = useState(false);
   const slideOpts = {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -54,17 +55,22 @@ const Tab2: React.FC = () => {
           <IonTitle>Labour Services</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="myClassName">
-        <IonSearchbar
-          id="search_bar"
-          value={searchText}
-          onIonChange={(e) => setSearchText(e.detail.value!)}
-          animated
-        ></IonSearchbar>
+      <IonContent>
+        <IonToolbar>
+          <IonSearchbar
+            autocomplete="on"
+            id="search_bar"
+            value={searchText}
+            onIonChange={(e) => setSearchText(e.detail.value!)}
+            animated
+            placeholder="Search"
+          ></IonSearchbar>
+        </IonToolbar>
         <IonButton id="open-modal" color="tertiary" expand="block">
           Services
         </IonButton>
         <IonModal
+          isOpen={isOpen}
           ref={modal}
           trigger="open-modal"
           initialBreakpoint={0.25}
@@ -156,68 +162,90 @@ const Tab2: React.FC = () => {
           </IonContent>
         </IonModal>
 
-        <IonCard className="card"  onClick={() => alert("clicked")}>
-          <IonCardHeader>
-            <IonCardTitle>
-              Electrician
-            </IonCardTitle>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent></IonCardContent>
-        </IonCard> 
-
         <IonCard className="card">
           <IonCardHeader>
-            <IonCardTitle>Plumber</IonCardTitle>
+            <IonButton onClick={() => setIsOpen(true)}>Electrician</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent></IonCardContent>
+          <IonCardContent onClick={() => setIsOpen(false)}>
+            Close
+          </IonCardContent>
         </IonCard>
 
         <IonCard className="card">
           <IonCardHeader>
-            <IonCardTitle>Mason</IonCardTitle>
+            <IonButton onClick={() => setIsOpen(true)}>Plumber</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent></IonCardContent>
+          <IonCardContent onClick={() => setIsOpen(false)}>
+            Close
+          </IonCardContent>
         </IonCard>
 
         <IonCard className="card">
           <IonCardHeader>
-            <IonCardTitle>Carpenter</IonCardTitle>
+            <IonButton onClick={() => setIsOpen(true)}>Mason</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent></IonCardContent>
+          <IonCardContent onClick={() => setIsOpen(false)}>
+            Close
+          </IonCardContent>
         </IonCard>
 
         <IonCard className="card">
           <IonCardHeader>
-            <IonCardTitle>Painter</IonCardTitle>
+            <IonButton onClick={() => setIsOpen(true)}>Carpenter</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent></IonCardContent>
+          <IonCardContent onClick={() => setIsOpen(false)}>
+            Close
+          </IonCardContent>
         </IonCard>
 
         <IonCard className="card">
           <IonCardHeader>
-            <IonCardTitle>Pest controller</IonCardTitle>
+            <IonButton onClick={() => setIsOpen(true)}>Painter</IonButton>
             <IonCardSubtitle></IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent></IonCardContent>
+          <IonCardContent onClick={() => setIsOpen(false)}>
+            Close
+          </IonCardContent>
+        </IonCard>
+
+        <IonCard className="card">
+          <IonCardHeader>
+            <IonButton onClick={() => setIsOpen(true)}>Pest Controller</IonButton>
+            <IonCardSubtitle></IonCardSubtitle>
+          </IonCardHeader>
+          <IonCardContent onClick={() => setIsOpen(false)}>
+            Close
+          </IonCardContent>
         </IonCard>
 
         <IonSlides options={slideOpts} className="slide">
           <IonSlide className="slider-card">
             <img src="../../assets/image1.jpg" alt="Image1" />
-            <IonCardHeader className="hover" style={{fontFamily:"Oleo Script Swash Caps", fontSize:"2rem"}}><a href="tab3">Hello</a></IonCardHeader>
+            <IonCardHeader className="hover">
+              <a href="/">Hello</a>
+            </IonCardHeader>
           </IonSlide>
           <IonSlide className="slider-card">
             <img src="../../assets/image2.jpg" alt="Image2" />
-            <IonCardHeader className="hover" style={{fontFamily:"Oleo Script Swash Caps", fontSize:"2rem"}}><a href="tab1">Ionic</a></IonCardHeader>
+            <IonCardHeader
+              className="hover"
+              style={{ fontFamily: "Oleo Script Swash Caps", fontSize: "2rem" }}
+            >
+              <a href="tab1">Ionic</a>
+            </IonCardHeader>
           </IonSlide>
           <IonSlide className="slider-card">
             <img src="../../assets/image3.jpg" alt="Image3" />
-            <IonCardHeader className="hover" style={{fontFamily:"Oleo Script Swash Caps", fontSize:"2rem"}}><a href="tab2">Project</a></IonCardHeader>
+            <IonCardHeader
+              className="hover"
+              style={{ fontFamily: "Oleo Script Swash Caps", fontSize: "2rem" }}
+            >
+              <a href="tab2">Project</a>
+            </IonCardHeader>
           </IonSlide>
         </IonSlides>
       </IonContent>
@@ -227,6 +255,16 @@ const Tab2: React.FC = () => {
 
 export default Tab2;
 
+// function present(arg0: { onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => void; }) {
+//   throw new Error("Function not implemented.");
+// }
+
+//   function ModalExample(ModalExample: any, arg1: { onDismiss: (data: string, role: string) => void; }): [any, any] {
+//     throw new Error("Function not implemented.");
+//   }
+// function setIsOpen(arg0: boolean): void {
+//   throw new Error("Function not implemented.");
+// }
 // function setText(arg0: string): void {
 //   throw new Error("Function not implemented.");
 // }
