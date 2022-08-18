@@ -19,10 +19,10 @@ import {
   IonLabel,
 } from "@ionic/react";
 // import ExploreContainer from '../components/ExploreContainer';
-import "./labourDashboard.css";
+import classes from "./LabourDashboard.module.css";
 import { settingsOutline } from "ionicons/icons";
 import { useState } from "react";
-const Tab2: React.FC = () => {
+const LabourDashboard: React.FC = () => {
   const [labourStatusMode, setLabourStatusMode] = useState("warning");
   const [labourStatus, setLabourStatus] = useState("INACTIVE");
   const [completedServices, setCompletedServicest] = useState(0);
@@ -47,15 +47,15 @@ const Tab2: React.FC = () => {
         <IonToolbar>
           <IonTitle>
             <IonGrid style={{ backgroundColor: "white", color: "black" }}>
-              <IonRow className=" ion-align-items-center">
-                <IonCol className="settingIcon">
+              <IonRow className={classes.ion_align_items_center}>
+                <IonCol className={classes.settingIcon}>
                   <IonIcon
                     icon={settingsOutline}
                     size="default"
                     style={{ marginLeft: "8px" }}
                   />
                 </IonCol>
-                <IonCol className="appName">Labour Services</IonCol>
+                <IonCol className={classes.appName}>Labour Services</IonCol>
               </IonRow>
             </IonGrid>
           </IonTitle>
@@ -63,42 +63,42 @@ const Tab2: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-        <IonGrid className="gridContainer">
-          <IonButton className="labourStatus" size="large" color={labourStatusMode} onClick={changeStatus}>{labourStatus}</IonButton>
+        <IonGrid className={classes.gridContainer}>
+          <IonButton className={classes.labourStatus} size="large" color={labourStatusMode} onClick={changeStatus}>{labourStatus}</IonButton>
           <IonRow>
             <IonCol>
-              <IonCard className="card cardRight">
+              <IonCard className={classes.card}>
                 <IonCardHeader id="completedServicesTitle">
-                  <p className="sam">{completedServices}</p>
-                  <IonCardTitle className="sam2">Completed Services</IonCardTitle>
+                  <p className={classes.sam}>{completedServices}</p>
+                  <IonCardTitle className={classes.sam2}>Completed Services</IonCardTitle>
                 </IonCardHeader>
               </IonCard>
             </IonCol>
             <IonCol>
-              <IonCard className="card cardLeft">
+              <IonCard className={classes.card}>
                 <IonCardHeader id="pendingServicesTitle">
-                  <p className="sam">{pendingServices}</p>
-                  <IonCardTitle className="sam2">Pending Services</IonCardTitle>
+                  <p className={classes.sam}>{pendingServices}</p>
+                  <IonCardTitle className={classes.sam2}>Pending Services</IonCardTitle>
                 </IonCardHeader>
               </IonCard>
             </IonCol>
           </IonRow>
           <IonRow>
-            <IonCol>
-              <IonCard className="card cardRight">
+            <IonCol>  
+              <IonCard className={classes.card}>
                 <IonCardHeader id="scheduleServicesTitle">
-                  <p className="sam">{scheduleServices}</p>
-                  <IonCardTitle className="sam2">
+                  <p className={classes.sam}>{scheduleServices}</p>
+                  <IonCardTitle className={classes.sam2}>
                     Schedule Services
                   </IonCardTitle>
                 </IonCardHeader>
               </IonCard>
             </IonCol>
             <IonCol>
-              <IonCard className="card cardLeft">
+              <IonCard className={classes.card}>
                 <IonCardHeader id="penaltiesTitle">
-                  <p className="sam">{penalties}</p>
-                  <IonCardTitle className="sam2">Penalties</IonCardTitle>
+                  <p className={classes.sam}>{penalties}</p>
+                  <IonCardTitle className={classes.sam2}>Penalties</IonCardTitle>
                 </IonCardHeader>
               </IonCard>
             </IonCol>
@@ -112,7 +112,7 @@ const Tab2: React.FC = () => {
                 <IonItem slot="header" color="light">
                   <IonLabel>Completed Services</IonLabel>
                 </IonItem>
-                <div className="ion-padding" slot="content">
+                <div className={classes.ion_padding} slot="content">
                   Completed Services Content
                 </div>
               </IonAccordion>
@@ -120,7 +120,7 @@ const Tab2: React.FC = () => {
                 <IonItem slot="header" color="light">
                   <IonLabel>Pending Services</IonLabel>
                 </IonItem>
-                <div className="ion-padding" slot="content">
+                <div className={classes.ion_padding} slot="content">
                   Pending Services Content
                 </div>
               </IonAccordion>
@@ -128,7 +128,7 @@ const Tab2: React.FC = () => {
                 <IonItem slot="header" color="light">
                   <IonLabel>Schedule Services</IonLabel>
                 </IonItem>
-                <div className="ion-padding" slot="content">
+                <div className={classes.ion_padding} slot="content">
                   Schedule Services Content
                 </div>
               </IonAccordion>
@@ -136,7 +136,7 @@ const Tab2: React.FC = () => {
                 <IonItem slot="header" color="light">
                   <IonLabel>Penalties</IonLabel>
                 </IonItem>
-                <div className="ion-padding" slot="content">
+                <div className={classes.ion_padding} slot="content">
                   Penlties Content
                 </div>
               </IonAccordion>
@@ -148,4 +148,4 @@ const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default LabourDashboard;

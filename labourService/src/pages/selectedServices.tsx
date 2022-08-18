@@ -25,11 +25,11 @@ import {
   IonCardHeader,
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
-import "./selectedServices.css";
-const Tab1: React.FC = () => {
+import classes from "./SelectedServices.module.css";
+
+const SelectedServices: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   const [searchText, setSearchText] = useState("");
-  // const [trigger, setTrigger] = useState("open-modal");
   const [isOpen, setIsOpen] = useState(false);
   const slideOpts = {
     slidesPerView: 1,
@@ -66,24 +66,39 @@ const Tab1: React.FC = () => {
             placeholder="Search"
           ></IonSearchbar>
         </IonToolbar>
-        <IonButton id="open-modal" color="tertiary" expand="block">
+        <IonButton
+          onClick={() => setIsOpen(true)}
+          color="tertiary"
+          expand="block"
+        >
           Services
         </IonButton>
         <IonModal
-          isOpen={isOpen}
           ref={modal}
-          trigger="open-modal"
+          isOpen={isOpen}
           initialBreakpoint={0.25}
           breakpoints={[0, 0.25, 0.5, 0.75, 1]}
         >
-          <IonContent className="ion-padding">
+          <IonHeader>
+            <IonToolbar>
+              <IonButton
+                onClick={() => setIsOpen(false)}
+                slot="end"
+                color="secondary"
+              >
+                Close
+              </IonButton>
+            </IonToolbar>
+          </IonHeader>
+
+          <IonContent className={classes.ion_padding}>
             {/* <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.75)} placeholder="Search"></IonSearchbar> */}
             <IonList id="ion-align-items-center">
               <IonGrid>
                 <IonRow style={{ marginTop: "20px" }}>
                   <IonCol>
                     <IonButton
-                      className="serviceBtn"
+                      className={classes.serviceBtn}
                       color="danger"
                       onClick={() =>
                         presentAlert({
@@ -108,7 +123,7 @@ const Tab1: React.FC = () => {
                   </IonCol>
                   <IonCol>
                     <IonButton
-                      className="serviceBtn"
+                      className={classes.serviceBtn}
                       color="warning"
                       onClick={() =>
                         presentAlert({
@@ -133,7 +148,7 @@ const Tab1: React.FC = () => {
                   </IonCol>
                   <IonCol>
                     <IonButton
-                      className="serviceBtn"
+                      className={classes.serviceBtn}
                       color="success"
                       onClick={() => modal.current?.setCurrentBreakpoint(0.75)}
                     >
@@ -152,7 +167,7 @@ const Tab1: React.FC = () => {
                   style={{
                     backgroundColor: "pink",
                     color: "white",
-                    borderRadius: "25px",
+                    borderRadius: "5px",
                   }}
                   presentation="date-time"
                   prefer-wheel={true}
@@ -162,106 +177,111 @@ const Tab1: React.FC = () => {
           </IonContent>
         </IonModal>
 
-        <IonGrid className="gridServiceContainer">
+        <IonGrid className={classes.gridServiceContainer}>
           <IonRow>
             <IonCol>
-            <IonCard className="serviceCard serviceCardLeft">
-          <IonCardHeader>
-            <IonButton onClick={() => setIsOpen(true)}>Electrician</IonButton>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent onClick={() => setIsOpen(false)}>
-            Close
-          </IonCardContent>
-        </IonCard>
+              <IonCard
+                onClick={() => setIsOpen(true)}
+                className={classes.serviceCard}
+              >
+                <IonCardHeader className={classes.ion_text_center}>
+                  <IonCardTitle>Electrician</IonCardTitle>
+                  <IonCardSubtitle></IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent></IonCardContent>
+              </IonCard>
             </IonCol>
             <IonCol>
-            <IonCard className="serviceCard serviceCardRight">
-          <IonCardHeader>
-            <IonButton onClick={() => setIsOpen(true)}>Plumber</IonButton>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent onClick={() => setIsOpen(false)}>
-            Close
-          </IonCardContent>
-        </IonCard>
+              <IonCard
+                onClick={() => setIsOpen(true)}
+                className={classes.serviceCard}
+              >
+                <IonCardHeader className={classes.ion_text_center}>
+                  <IonCardTitle>Plumber</IonCardTitle>
+                  <IonCardSubtitle></IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent></IonCardContent>
+              </IonCard>
             </IonCol>
           </IonRow>
 
           <IonRow>
-          <IonCol>
-          <IonCard className="serviceCard serviceCardLeft">
-          <IonCardHeader>
-            <IonButton onClick={() => setIsOpen(true)}>Mason</IonButton>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent onClick={() => setIsOpen(false)}>
-            Close
-          </IonCardContent>
-        </IonCard>
-          </IonCol>
             <IonCol>
-            <IonCard className="serviceCard serviceCardRight">
-          <IonCardHeader>
-            <IonButton onClick={() => setIsOpen(true)}>Carpenter</IonButton>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent onClick={() => setIsOpen(false)}>
-            Close
-          </IonCardContent>
-        </IonCard>
+              <IonCard
+                onClick={() => setIsOpen(true)}
+                className={classes.serviceCard}
+              >
+                <IonCardHeader className={classes.ion_text_center}>
+                  <IonCardTitle>Mason</IonCardTitle>
+                  <IonCardSubtitle></IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent></IonCardContent>
+              </IonCard>
+            </IonCol>
+            <IonCol>
+              <IonCard
+                onClick={() => setIsOpen(true)}
+                className={classes.serviceCard}
+              >
+                <IonCardHeader className={classes.ion_text_center}>
+                  <IonCardTitle>Carpenter</IonCardTitle>
+                  <IonCardSubtitle></IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent></IonCardContent>
+              </IonCard>
             </IonCol>
           </IonRow>
           <IonRow>
-          <IonCol>
-          <IonCard className="serviceCard serviceCardLeft">
-          <IonCardHeader>
-            <IonButton onClick={() => setIsOpen(true)}>Painter</IonButton>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent onClick={() => setIsOpen(false)}>
-            Close
-          </IonCardContent>
-        </IonCard>
-          </IonCol>
             <IonCol>
-            <IonCard className="serviceCard serviceCardRight">
-          <IonCardHeader>
-            <IonButton onClick={() => setIsOpen(true)}>Pest Controller</IonButton>
-            <IonCardSubtitle></IonCardSubtitle>
-          </IonCardHeader>
-          <IonCardContent onClick={() => setIsOpen(false)}>
-            Close
-          </IonCardContent>
-        </IonCard>
+              <IonCard
+                onClick={() => setIsOpen(true)}
+                className={classes.serviceCard}
+              >
+                <IonCardHeader className={classes.ion_text_center}>
+                  <IonCardTitle>Painter</IonCardTitle>
+                  <IonCardSubtitle></IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent></IonCardContent>
+              </IonCard>
+            </IonCol>
+            <IonCol>
+              <IonCard
+                onClick={() => setIsOpen(true)}
+                className={classes.serviceCard}
+              >
+                <IonCardHeader className={classes.ion_text_center}>
+                  <IonCardTitle>Pest Controller</IonCardTitle>
+                  <IonCardSubtitle></IonCardSubtitle>
+                </IonCardHeader>
+                <IonCardContent></IonCardContent>
+              </IonCard>
             </IonCol>
           </IonRow>
         </IonGrid>
-        
 
-        <IonSlides options={slideOpts} className="slide">
-          <IonSlide className="slider-card">
-            <img src="../../assets/image1.jpg" alt="Image1"/>
-            <IonCardHeader className="hover">
-              <a href="/">Hello</a>
+        <IonSlides options={slideOpts} className={classes.slide}>
+          <IonSlide className={classes.slider_card}>
+            <img src="../../assets/image1.jpg" alt="Image1" />
+            <IonCardHeader className={classes.hover}>
+              <a href="/">EXPLORE</a>
             </IonCardHeader>
           </IonSlide>
-          <IonSlide className="slider-card">
+          <IonSlide className={classes.slider_card}>
             <img src="../../assets/image2.jpg" alt="Image2" />
             <IonCardHeader
-              className="hover"
+              className={classes.hover}
               style={{ fontFamily: "Oleo Script Swash Caps", fontSize: "2rem" }}
             >
-              <a href="tab1">Ionic</a>
+              <a href="/">IONIC</a>
             </IonCardHeader>
           </IonSlide>
-          <IonSlide className="slider-card">
+          <IonSlide className={classes.slider_card}>
             <img src="../../assets/image3.jpg" alt="Image3" />
             <IonCardHeader
-              className="hover"
+              className={classes.hover}
               style={{ fontFamily: "Oleo Script Swash Caps", fontSize: "2rem" }}
             >
-              <a href="tab2">Project</a>
+              <a href="/">ABOUT</a>
             </IonCardHeader>
           </IonSlide>
         </IonSlides>
@@ -270,32 +290,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
-
-// function present(arg0: { onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => void; }) {
-//   throw new Error("Function not implemented.");
-// }
-
-//   function ModalExample(ModalExample: any, arg1: { onDismiss: (data: string, role: string) => void; }): [any, any] {
-//     throw new Error("Function not implemented.");
-//   }
-// function setIsOpen(arg0: boolean): void {
-//   throw new Error("Function not implemented.");
-// }
-// function setText(arg0: string): void {
-//   throw new Error("Function not implemented.");
-// }
-
-// function trigger(arg0: string): void {
-//   throw new Error("Function not implemented.");
-// }
-// function setSearchText(arg0: string): void {
-//   throw new Error("Function not implemented.");
-// }
-// function setCurrentBreakpoint(initialBreakpoint: 0.25, arg1: 0.25) {
-
-// }
-
-// function initialBreakpoint(initialBreakpoint: any, arg1: number) {
-//   throw new Error("Function not implemented.");
-// }
+export default SelectedServices;

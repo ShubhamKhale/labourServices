@@ -1,0 +1,9 @@
+.profile-image {
+  margin-top: 1.5em;
+  width: 124px;
+  height: 124px;
+  display: flex;
+  margin-left: 7.5rem;
+  margin-bottom: 1.5em;
+  border-radius: 200%;
+}
