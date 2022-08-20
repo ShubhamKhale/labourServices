@@ -23,9 +23,15 @@ import {
   IonSearchbar,
   IonCardTitle,
   IonCardHeader,
+  IonBackButton,
+  IonButtons,
+  IonIcon,
+  IonLabel,
+  IonPopover,
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
 import classes from "./SelectedServices.module.css";
+import { settingsOutline, ellipsisHorizontal, ellipsisVertical, refreshOutline, shareSocialOutline } from "ionicons/icons";
 
 const SelectedServices: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -52,9 +58,37 @@ const SelectedServices: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="secondary">
+            <IonBackButton defaultHref="/setting" icon={settingsOutline} />
+          </IonButtons>
+          <IonButtons slot="primary">
+            <IonButton id='xx'>
+              <IonIcon
+                slot="icon-only"
+                ios={ellipsisHorizontal}
+                md={ellipsisVertical}
+              />
+            </IonButton>
+
+            <IonPopover trigger='xx' dismissOnSelect={true} reference="event" showBackdrop={false}>
+              <IonContent class="ion-padding">
+                <IonItem>
+                  <IonIcon icon={refreshOutline} slot="start" />
+                  <IonLabel>Restart App</IonLabel>
+                </IonItem>
+                <IonItem>
+                  <IonIcon icon={shareSocialOutline} slot="start" />
+                  <IonLabel>Share App</IonLabel>
+                </IonItem>
+              </IonContent>
+            </IonPopover>
+
+
+          </IonButtons>
           <IonTitle>Labour Services</IonTitle>
         </IonToolbar>
       </IonHeader>
+
       <IonContent>
         <IonToolbar>
           <IonSearchbar

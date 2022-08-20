@@ -37,24 +37,26 @@ const Theme: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonList>
-        <IonRadioGroup>
-          <IonItem>
-            <IonLabel>Use device theme</IonLabel>
-            <IonRadio value="cord" />
-          </IonItem>
+      <IonContent>
+        <IonList>
+          <IonRadioGroup>
+            <IonItem>
+              <IonLabel>Use device theme</IonLabel>
+              <IonRadio value="cord" />
+            </IonItem>
 
-          <IonItem>
-            <IonLabel>Dark theme</IonLabel>
-            <IonRadio value="duesenberg" />
-          </IonItem>
+            <IonItem>
+              <IonLabel>Dark theme</IonLabel>
+              <IonRadio value="duesenberg" />
+            </IonItem>
 
-          <IonItem>
-            <IonLabel>Light theme</IonLabel>
-            <IonRadio value="hudson" />
-          </IonItem>
-        </IonRadioGroup>
-      </IonList>
+            <IonItem>
+              <IonLabel>Light theme</IonLabel>
+              <IonRadio value="hudson" />
+            </IonItem>
+          </IonRadioGroup>
+        </IonList>
+      </IonContent>
     </IonPage>
   );
 };

@@ -2,6 +2,7 @@ import {
   IonBackButton,
   IonButton,
   IonButtons,
+  IonContent,
   IonHeader,
   IonInput,
   IonItem,
@@ -53,7 +54,7 @@ const Profile: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/" icon={chevronBackOutline} />
           </IonButtons>
-          
+
           <IonButtons slot="secondary">
             {/* <IonButton onClick={()=>{
               setIsEditable(false);
@@ -72,11 +73,10 @@ const Profile: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <div>
-      <ProfilePhoto/>
+      <IonContent>
+        <ProfilePhoto />
         <IonItem>
           <IonLabel
-            color="danger"
             mode="ios"
             position="floating"
           >
@@ -157,7 +157,7 @@ const Profile: React.FC = () => {
             </IonItem> */}
           </IonList>
         </IonItem>
-      </div>
+      </IonContent>
     </IonPage>
   );
 };
