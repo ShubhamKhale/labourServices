@@ -34,6 +34,11 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Settings from './pages/Settings';
+import About from './pages/setting_pages/About';
+import Language from './pages/setting_pages/Language';
+import Profile from './pages/setting_pages/Profile';
+import Theme from './pages/setting_pages/Theme';
 
 setupIonicReact();
 
@@ -42,6 +47,21 @@ const App: React.FC = () => (
     <IonReactRouter>
       <Route path="/" exact>
         <SelectedServices/>
+      </Route>
+      <Route path="/setting" exact>
+        <Settings />
+      </Route>
+      <Route path="/setting/profile" exact>
+        <Profile />
+      </Route>
+      <Route path="/setting/theme" exact>
+        < Theme />
+      </Route>
+      <Route path="/setting/language" exact>
+        <Language />
+      </Route>
+      <Route path="/setting/about" exact>
+        <About />
       </Route>
       <Route path="/labour-dashboard" exact>
         <LabourDashboard/>

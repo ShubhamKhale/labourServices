@@ -13,9 +13,8 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import ProfilePhoto from "../components/ProfilePhoto";
 
-// import { squareOutline } from "ionicons/icons";
-import ExploreContainer from "../components/profilePhoto";
 // import { squareOutline } from "ionicons/icons";
 import classes from "./EnterPhoneNo.module.css";
 // const slideOpts = {
@@ -27,7 +26,7 @@ const EnterPhoneNo: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <ExploreContainer/>
+        <ProfilePhoto/>
         <br />
         <IonToolbar className={classes.ion_content}>
           <IonTitle>
