@@ -12,8 +12,8 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 // import { ellipse, square, triangle} from 'ionicons/icons';
 
-import LabourDashboard from './pages/LabourDashboard';
-import SelectedServices from './pages/SelectedServices';
+import LabourDashboard from './pages/labourDashboard';
+import SelectedServices from './pages/selectedServices';
 import EnterPhoneNo from './pages/EnterPhoneNo';
 import StartingPage from './pages/StartingPage';
 /* Core CSS required for Ionic components to work properly */
