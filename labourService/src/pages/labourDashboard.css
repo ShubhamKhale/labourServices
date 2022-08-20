@@ -53,15 +53,49 @@
     margin-top: 3px;
 }
 
-
-#pendingServicesContent{
-    display: none;
+.serviceTitle{
+    padding-left: 17px;
+    font-weight: bold;
+    font-size: 26px;
 }
 
-#scheduleServicesContent{
-    display: none;
+.serviceContent{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 15px;
 }
 
-#penaltiesContent{
-    display: none;   
+.serviceContentRow2{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+}
+
+.serviceLocation{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.serviceLocation p{
+    margin-left: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+.serviceDate{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.serviceDate p{
+    margin-left: 5px;
+}
+
+.serviceTime{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.serviceTime p{
+    margin-left: 5px;
 }
