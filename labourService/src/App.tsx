@@ -10,11 +10,12 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
+// import { ellipse, square, triangle} from 'ionicons/icons';
 
-import Tab1 from './pages/selectedServices';
-import Tab2 from './pages/labourDashboard';
-
+import LabourDashboard from './pages/labourDashboard';
+import SelectedServices from './pages/selectedServices';
+import EnterPhoneNo from './pages/EnterPhoneNo';
+import StartingPage from './pages/StartingPage';
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -34,20 +35,43 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import Otp from './pages/Otp';
+import Settings from './pages/Settings';
+import About from './pages/setting_pages/About';
+import Language from './pages/setting_pages/Language';
+import Profile from './pages/setting_pages/Profile';
+import Theme from './pages/setting_pages/Theme';
 
 setupIonicReact();
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <Route path='/tab1' exact>
-        <Tab1/>
+      <Route path="/" exact>
+        <SelectedServices/>
       </Route>
-      <Route path='/tab2' exact>
-        <Tab2/>
+      <Route path="/setting" exact>
+        <Settings />
       </Route>
-      <Route path='/otp' exact>
-        <Otp/>
+      <Route path="/setting/profile" exact>
+        <Profile />
+      </Route>
+      <Route path="/setting/theme" exact>
+        < Theme />
+      </Route>
+      <Route path="/setting/language" exact>
+        <Language />
+      </Route>
+      <Route path="/setting/about" exact>
+        <About />
+      </Route>
+      <Route path="/labour-dashboard" exact>
+        <LabourDashboard/>
+      </Route>
+      <Route path="/enter-phone-no" exact>
+        <EnterPhoneNo/>
+      </Route>
+      <Route path="/starting-page" exact>
+        <StartingPage/>
       </Route>
     </IonReactRouter>
   </IonApp>

@@ -1,0 +1,43 @@
+.title{
+    padding-left: 30px;
+    font-weight: bold;
+}
+
+/* .text1{
+    text-align: center;
+    margin-top: 60%;
+} */
+
+/* .ion_button_center{
+    padding-left: 4.5rem;
+    margin-top: 40%;
+    position: fixed;
+} */
+
+.ion_title{
+    line-height: 40px;
+    padding-left: 50px;
+}
+
+.ion_content{
+    margin-top: 8rem;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ion_button{
+    margin-left: 7.5rem;
+    margin-top: 20rem;
+    --border-radius: 10px;
+}
+
+b{
+    padding: 0.5rem;
+}
+
+.ion_item_border{
+    border: 2.5px solid black;
+    margin: 3rem;
+    border-radius: 9px;
+    margin-block: auto;
+}
