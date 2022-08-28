@@ -8,11 +8,11 @@ import About from './pages/setting_pages/About';
 import Language from './pages/setting_pages/Language';
 import Profile from './pages/setting_pages/Profile';
 import Theme from './pages/setting_pages/Theme';
-import SelectedServices from './pages/selectedServices';
 import EnterPhoneNo from './pages/EnterPhoneNo';
-import LabourDashboard from './pages/labourDashboard';
 import NotFoundPage from './pages/NotFoundPage';
 import StartingPage from './pages/StartingPage';
+import SelectedServices from './pages/SelectedServices';
+import LabourDashboard from './pages/LabourDashboard';
 
 
 
