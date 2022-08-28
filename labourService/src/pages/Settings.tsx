@@ -35,15 +35,15 @@ import {
 } from "ionicons/icons";
 import React, { useState } from "react";
 import SettingBtn from "../components/SettingBtn";
-import ProfilePhoto from "../components/ProfilePhoto";
+import ProfilePhoto from "../components/profilePhoto";
+import Theme from "./setting_pages/Theme";
 
 const NewPage: React.FC = () => {
   const [presentAlert] = useIonAlert();
   const [showThemeActionSheet, setThemeShowActionSheet] = useState(false);
   const [showLanguageeActionSheet, setLanguageActionSheet] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
-
-  const [present, dismiss] = useIonActionSheet();
+  const [theme, setTheme] = useState('destructive');
 
   return (
     <IonPage>
@@ -181,6 +181,7 @@ const NewPage: React.FC = () => {
           isOpen={isLogout}
           onDidDismiss={() => setIsLogout(false)}
           header="Logout"
+          mode='ios'
           subHeader="Are you sure?"
           buttons={["Yes", "No"]}
         />

@@ -16,7 +16,7 @@ import {
 } from "@ionic/react";
 import { chevronBackOutline, createOutline } from "ionicons/icons";
 import React, { useState } from "react";
-import ProfilePhoto from "../../components/ProfilePhoto";
+import ProfilePhoto from "../../components/profilePhoto";
 
 
 interface Food {
@@ -73,7 +73,7 @@ const Profile: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent >
         <ProfilePhoto />
         <IonItem>
           <IonLabel
