@@ -131,6 +131,15 @@ const About: React.FC = () => {
             <AppLogoCard icon={logoGithub} to="https://github.com/" />
           </div>
         </IonCard>
+        <IonCard href={"mailto:labourservices.report@gmail.com?&subject=I got this error&body=Here Provide the discription of the Error or Problem and also attach few  or short video (in case of error) for more clarity"}>
+          <IonCardHeader>
+
+            <IonCardSubtitle>Report a Error</IonCardSubtitle>
+          </IonCardHeader>
+          <IonCardContent><>labourservices.report@gmail.com</></IonCardContent>
+
+          {/* "mailto:labourservices.report@gmail.com?&subject=I got this error&body=Here Provide the discription of the Error or Problem and also attach few  or short video (in case of error) for more clarity" */}
+        </IonCard>
       </IonContent>
     </IonPage>
   );
