@@ -28,6 +28,7 @@ import {
   IonIcon,
   IonLabel,
   IonPopover,
+  IonicSlides,
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
 import classes from "./SelectedServices.module.css";
@@ -44,6 +45,14 @@ const SelectedServices: React.FC = () => {
     slidesPerView: 1,
     spaceBetween: 10,
     centeredSlides: true,
+
+    autoplay: true,
+    speed:1000,
+    pagination: true,
+    scrollbar: true,
+    loop:true,
+
+
 
     coverflowEffect: {
       freeMode: true,
@@ -216,9 +225,9 @@ const SelectedServices: React.FC = () => {
         </IonGrid>
 
         <IonSlides options={slideOpts} className={classes.slide}>
-          <Banner src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
-          <Banner src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
-          <Banner src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
+          <Banner text = "Explore" src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
+          <Banner text = "Prices" src={"https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"} />
+          <Banner text = "Offers" src={"https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"} />
         </IonSlides>
 
       </IonContent>
