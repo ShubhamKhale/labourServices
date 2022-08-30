@@ -8,3 +8,8 @@
     margin-top: 40%;
     position: fixed;
 }
+
+*{
+    margin: 0px;
+    padding: 0px;
+}

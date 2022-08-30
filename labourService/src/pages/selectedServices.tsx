@@ -31,7 +31,13 @@ import {
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
 import classes from "./SelectedServices.module.css";
-import { settingsOutline, ellipsisHorizontal, ellipsisVertical, refreshOutline, shareSocialOutline } from "ionicons/icons";
+import {
+  settingsOutline,
+  ellipsisHorizontal,
+  ellipsisVertical,
+  refreshOutline,
+  shareSocialOutline,
+} from "ionicons/icons";
 
 const SelectedServices: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -62,7 +68,7 @@ const SelectedServices: React.FC = () => {
             <IonBackButton defaultHref="/setting" icon={settingsOutline} />
           </IonButtons>
           <IonButtons slot="primary">
-            <IonButton id='xx'>
+            <IonButton id="xx">
               <IonIcon
                 slot="icon-only"
                 ios={ellipsisHorizontal}
@@ -70,22 +76,25 @@ const SelectedServices: React.FC = () => {
               />
             </IonButton>
 
-            <IonPopover trigger='xx' dismissOnSelect={true} reference="event" showBackdrop={false}>
+            <IonPopover
+              trigger="xx"
+              dismissOnSelect={true}
+              reference="event"
+              showBackdrop={false}
+            >
               <IonContent class="ion-padding">
                 <IonItem>
                   <IonIcon icon={refreshOutline} slot="start" />
-                  <IonLabel>Restart App</IonLabel>
+                  <IonLabel style={{paddingLeft:"9px"}}>Restart App</IonLabel>
                 </IonItem>
                 <IonItem>
                   <IonIcon icon={shareSocialOutline} slot="start" />
-                  <IonLabel>Share App</IonLabel>
+                  <IonLabel style={{paddingLeft:"9px"}}>Share App</IonLabel>
                 </IonItem>
               </IonContent>
             </IonPopover>
-
-
           </IonButtons>
-          <IonTitle>Labour Services</IonTitle>
+            <IonTitle style={{paddingLeft:"20px"}}>Labour Services</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -112,6 +121,7 @@ const SelectedServices: React.FC = () => {
           isOpen={isOpen}
           initialBreakpoint={0.25}
           breakpoints={[0, 0.25, 0.5, 0.75, 1]}
+          onDidDismiss={() => setIsOpen(false)}
         >
           <IonHeader>
             <IonToolbar>

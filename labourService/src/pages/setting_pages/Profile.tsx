@@ -18,7 +18,6 @@ import { chevronBackOutline, createOutline } from "ionicons/icons";
 import React, { useState } from "react";
 import ProfilePhoto from "../../components/ProfilePhoto";
 
-
 interface Food {
   id: number;
   name: string;
@@ -76,50 +75,47 @@ const Profile: React.FC = () => {
       <IonContent>
         <ProfilePhoto />
         <IonItem>
-          <IonLabel
-            mode="ios"
-            position="floating"
-          >
+          <IonLabel mode="ios" position="floating">
             First Name
           </IonLabel>
           <IonInput
             type="text"
-            placeholder={"Sailesh"}
+            placeholder={""}
             readonly={isEditable}
             clearInput={true}
-            value="Priyanshu"
+            value=""
             inputMode="text"
           ></IonInput>
         </IonItem>
-
+              <br/>
         <IonItem>
-          <IonLabel color="dark" position="floating">
+          <IonLabel mode="ios" position="floating">
             Last Name
           </IonLabel>
           <IonInput
             type="text"
-            placeholder={"Prajapati"}
+            placeholder={""}
             readonly={isEditable}
             clearInput={true}
-            value="Maurya"
+            value=""
             inputMode="text"
           ></IonInput>
         </IonItem>
-
+              <br/>
         <IonItem>
-          <IonLabel color="dark" position="floating">
+          <IonLabel mode="ios" position="floating">
             Email
           </IonLabel>
           <IonInput
             type="email"
-            placeholder={"prajapati45@gmail.com"}
+            placeholder={"xyz@gmail.com"}
             readonly={isEditable}
             clearInput={true}
-            value="pr17anshu@gmail.com"
+            value=""
             inputMode="email"
           ></IonInput>
         </IonItem>
-
+              <br/>
         <IonItem>
           <IonLabel position="floating">Date Of Birth</IonLabel>
           <IonInput
@@ -130,13 +126,12 @@ const Profile: React.FC = () => {
             clearOnEdit={false}
           ></IonInput>
         </IonItem>
-
+              <br/>
         <IonItem>
           <IonLabel>Gender</IonLabel>
           <IonList>
             <IonItem style={{ fontSize: "20px" }}>
               <IonSelect
-                placeholder="Select Gender"
                 compareWith={compareWith}
                 onIonChange={(ev) =>
                   setCurrentFood(JSON.stringify(ev.detail.value.food))

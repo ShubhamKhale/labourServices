@@ -52,7 +52,7 @@ const NewPage: React.FC = () => {
           <IonButtons slot="secondary">
             <IonBackButton defaultHref="/" icon={chevronForwardOutline} />
           </IonButtons>
-          <IonTitle>Setting</IonTitle>
+          <IonTitle style={{paddingLeft:"20px"}}>Setting</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
