@@ -12,23 +12,12 @@ import {
   IonTitle,
   IonToolbar,
   useIonAlert,
-  IonDatetime,
   IonItem,
-  IonText,
-  IonCard,
-  IonCardSubtitle,
-  IonCardContent,
   IonSlides,
-  IonSlide,
-  IonSearchbar,
-  IonCardTitle,
-  IonCardHeader,
-  IonBackButton,
   IonButtons,
   IonIcon,
   IonLabel,
   IonPopover,
-  IonicSlides,
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
 import classes from "./SelectedServices.module.css";
@@ -36,6 +25,7 @@ import { settingsOutline, ellipsisHorizontal, ellipsisVertical, refreshOutline, 
   "ionicons/icons";
 import SelectServiceBtn from "../components/SelectServiceBtn";
 import Banner from "../components/Banner";
+import { useHistory } from "react-router-dom";
 
 const SelectedServices: React.FC = () => {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -47,10 +37,10 @@ const SelectedServices: React.FC = () => {
     centeredSlides: true,
 
     autoplay: true,
-    speed:1000,
+    speed: 1000,
     pagination: true,
     scrollbar: true,
-    loop:true,
+    loop: true,
 
 
 
@@ -66,13 +56,15 @@ const SelectedServices: React.FC = () => {
     },
   };
   const [presentAlert] = useIonAlert();
-
+  const history = useHistory();
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="secondary">
-            <IonBackButton defaultHref="/setting" icon={settingsOutline} />
+            <IonButton onClick={() => history.push("/setting")}>
+              <IonIcon slot="icon-only" icon={settingsOutline} />
+            </IonButton>
           </IonButtons>
           <IonButtons slot="primary">
             <IonButton id='xx'>
@@ -136,10 +128,18 @@ const SelectedServices: React.FC = () => {
                           {
                             text: "No",
                             cssClass: "alert-button-cancel",
+
                           },
                           {
                             text: "Yes",
                             cssClass: "alert-button-confirm",
+                            handler: () => {
+                              setIsOpen(false);
+                              history.push('/customer-allocation-labour');
+
+
+
+                            }
                           },
                         ],
                       })
@@ -223,9 +223,9 @@ const SelectedServices: React.FC = () => {
         </IonGrid>
 
         <IonSlides options={slideOpts} className={classes.slide}>
-          <Banner text = "Explore" src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
-          <Banner text = "Prices" src={"https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"} />
-          <Banner text = "Offers" src={"https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"} />
+          <Banner text="Explore" src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
+          <Banner text="Prices" src={"https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"} />
+          <Banner text="Offers" src={"https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"} />
         </IonSlides>
 
       </IonContent>
