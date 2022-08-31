@@ -13,6 +13,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import StartingPage from './pages/StartingPage';
 import SelectedServices from './pages/SelectedServices';
 import LabourDashboard from './pages/LabourDashboard';
+import CustomerAllocateLabour from './pages/CustomerAllocateLabour';
 
 
 
@@ -38,6 +39,9 @@ const App: React.FC = () => (
       <Route path="/enter-phone-no" exact component={EnterPhoneNo} />
 
       <Route path="/starting-page" exact component={StartingPage} />
+
+      <Route path="/customer-allocation-labour" exact component={CustomerAllocateLabour} />
+
 
 
       <Route path="/select-services" render={() => <Redirect to={"/"} />} />

@@ -13,7 +13,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import ProfilePhoto from "../components/profilePhoto";
+import ProfilePhoto from "../components/ProfilePhoto";
 
 // import { squareOutline } from "ionicons/icons";
 import classes from "./EnterPhoneNo.module.css";
