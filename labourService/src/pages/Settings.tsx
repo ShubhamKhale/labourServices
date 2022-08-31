@@ -35,7 +35,7 @@ import {
 } from "ionicons/icons";
 import React, { useState } from "react";
 import SettingBtn from "../components/SettingBtn";
-import ProfilePhoto from "../components/profilePhoto";
+import ProfilePhoto from "../components/ProfilePhoto";
 import Theme from "./setting_pages/Theme";
 
 const NewPage: React.FC = () => {

@@ -16,7 +16,7 @@ import {
 } from "@ionic/react";
 import { chevronBackOutline, createOutline } from "ionicons/icons";
 import React, { useState } from "react";
-import ProfilePhoto from "../../components/profilePhoto";
+import ProfilePhoto from "../../components/ProfilePhoto";
 
 
 interface Food {
