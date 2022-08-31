@@ -181,7 +181,6 @@ const NewPage: React.FC = () => {
           isOpen={isLogout}
           onDidDismiss={() => setIsLogout(false)}
           header="Logout"
-          mode='ios'
           subHeader="Are you sure?"
           buttons={["Yes", "No"]}
         />

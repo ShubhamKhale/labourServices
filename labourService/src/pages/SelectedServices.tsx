@@ -99,13 +99,13 @@ const SelectedServices: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-        <IonToolbar>
+        {/* <IonToolbar>
           <IonSearchbar autocomplete="on" id="search_bar" value={searchText} onIonChange={(e) =>
             setSearchText(e.detail.value!)}
             animated
             placeholder="Search"
           ></IonSearchbar>
-        </IonToolbar>
+        </IonToolbar> */}
 
         <IonModal ref={modal} isOpen={isOpen} initialBreakpoint={0.25} breakpoints={[0, 0.25, 0.5, 1]} handle={false}
           onDidDismiss={() => setIsOpen(false)}
@@ -131,7 +131,6 @@ const SelectedServices: React.FC = () => {
                     <IonButton className={classes.serviceBtn} color="danger" onClick={() =>
                       presentAlert({
                         header: "Are you sure?",
-                        mode: "ios",
                         cssClass: "custom-alert",
                         buttons: [
                           {
@@ -153,7 +152,6 @@ const SelectedServices: React.FC = () => {
                     <IonButton className={classes.serviceBtn} color="warning" onClick={() =>
                       presentAlert({
                         header: "Are you sure?",
-                        mode: "ios",
                         cssClass: "custom-alert",
                         buttons: [
                           {
