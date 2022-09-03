@@ -36,14 +36,14 @@ import {
 import React, { useState } from "react";
 import SettingBtn from "../components/SettingBtn";
 import ProfilePhoto from "../components/ProfilePhoto";
+import Theme from "./setting_pages/Theme";
 
 const NewPage: React.FC = () => {
   const [presentAlert] = useIonAlert();
   const [showThemeActionSheet, setThemeShowActionSheet] = useState(false);
   const [showLanguageeActionSheet, setLanguageActionSheet] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
-
-  const [present, dismiss] = useIonActionSheet();
+  const [theme, setTheme] = useState('destructive');
 
   return (
     <IonPage>

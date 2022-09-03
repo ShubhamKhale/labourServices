@@ -1,0 +1,5 @@
+.slider_card{
+    height: 230px; 
+    width: 100% !important;
+    z-index: -1;
+  }

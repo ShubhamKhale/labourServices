@@ -8,7 +8,7 @@
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.3",
     "@capacitor/status-bar": "1.0.8",
-    "@ionic/react": "^6.0.0",
+    "@ionic/react": "^6.2.4",
     "@ionic/react-router": "^6.0.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -66,7 +66,7 @@
   },
   "devDependencies": {
     "@capacitor/cli": "3.6.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "^5.0.1"
   },
   "description": "An Ionic project"
 }

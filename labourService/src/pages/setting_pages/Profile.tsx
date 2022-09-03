@@ -73,7 +73,7 @@ const Profile: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent >
         <ProfilePhoto />
         <IonItem>
           <IonLabel

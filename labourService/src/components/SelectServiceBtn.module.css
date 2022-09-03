@@ -1,0 +1,13 @@
+.serviceCard{
+    width: 160px;
+      height: 100px;
+      text-align: center;
+      background-color: gold;
+      border-radius: 15px;
+      margin-left: 12px;
+      margin-top: 14px;
+  }
+  
+  .ion_text_center{
+    margin-top: 2rem;
+  }

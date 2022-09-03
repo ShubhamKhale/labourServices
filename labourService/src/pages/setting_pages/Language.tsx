@@ -32,25 +32,6 @@ const Language: React.FC = () => {
       </IonHeader>
 
       <IonContent>
-        {/* <IonFab vertical="top" horizontal="end" slot="fixed">
-        <IonFabButton>
-          <IonIcon icon={add} />
-        </IonFabButton>
-      </IonFab> */}
-
-
-        {/*-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right --*/}
-        <IonFab vertical="top" horizontal="end" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={settings} />
-          </IonFabButton>
-          <IonFabList side="bottom">
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
-          </IonFabList>
-        </IonFab>
-
       </IonContent>
 
     </IonPage>
