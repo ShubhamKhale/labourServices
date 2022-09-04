@@ -86,7 +86,7 @@ const SelectedServices: React.FC = () => {
 
 
           </IonButtons>
-          <IonTitle>Labour Services</IonTitle>
+          <IonTitle onClick={() => history.push('/labour-dashboard')}>Labour Services</IonTitle>
         </IonToolbar>
       </IonHeader>
 
