@@ -6,14 +6,14 @@ function ChangeText() {
     const TextStyling = {
         paddingTop: '20px',
         paddingLeft: '10px'
-    }
+    };
     const shuffle = useCallback(() => {
         const index = Math.floor(Math.random() * names.length);
         setnewName(names[index]);
     }, []);
 
     useEffect(() => {
-        const intervalID = setInterval(shuffle, 3000);
+        const intervalID = setInterval(shuffle, 500);
         return () => clearInterval(intervalID);
     }, [shuffle])
 

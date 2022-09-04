@@ -13,13 +13,20 @@ function CustomerAllocateLabour() {
 
   useLayoutEffect(() => setModelOpen(true));
   return (
-    <IonPage>
+    <IonPage >
       <IonContent className="ion-padding">
         <IonFabButton size="small" onClick={() => { history.push('/') }} className={classes.backfab} color="light">
           <IonIcon icon={arrowBackOutline} />
         </IonFabButton>
 
-        <IonModal ref={modal} isOpen={modelOpen} initialBreakpoint={0.35} breakpoints={[0, 0.25, 0.35]} showBackdrop={true} >
+        <IonModal
+          ref={modal} 
+          isOpen={modelOpen} 
+          initialBreakpoint={0.35} 
+          breakpoints={[0, 0.25, 0.35]} 
+          showBackdrop={false}
+          backdropBreakpoint={0.75}
+          >
           <IonContent className="ion-padding">
             <ChangeText /><br />
             <IonProgressBar type="indeterminate"></IonProgressBar><br />
