@@ -7,10 +7,10 @@ function ServiceCount(props: { servicesCount: number | undefined; serviceName: s
   return (
 
       <>
-        <IonCard className={classes.card}>
+        <IonCard className={classes.card} style={{backgroundColor : props.color}}>
             <IonCardHeader id="completedServicesTitle">
-              <p className={classes.sam}>{props.servicesCount}</p>
-              <IonCardTitle className={classes.sam2}>{props.serviceName}</IonCardTitle>
+              <h1 style={{color: "currentColor"}}>{props.servicesCount}</h1>
+              <IonCardTitle style={{position: "relative", bottom: "18px", color: "currentColor"}}><h3>{props.serviceName}</h3></IonCardTitle>
             </IonCardHeader>
         </IonCard>
       </>

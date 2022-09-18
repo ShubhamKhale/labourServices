@@ -78,27 +78,32 @@ const LabourDashboard: React.FC = () => {
           <IonButton className={classes.labourStatus} size="large" color={labourStatusMode} onClick={changeStatus}>{labourStatus}</IonButton>
           <IonRow>
             <IonCol onClick={viewCompletedServicesContent}>
-              <ServiceCount servicesCount={completedServicesCount} serviceName="Completed Service" />
+              <ServiceCount servicesCount={completedServicesCount} serviceName="Completed Service" color="#FBE7C6"/>
             </IonCol>
             <IonCol onClick={viewPendingServicesContent}>
-              <ServiceCount servicesCount={pendingServicesCount} serviceName="Pending Service" />
+              <ServiceCount servicesCount={pendingServicesCount} serviceName="Pending Service" color="#B4F8C8"/>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol onClick={viewScheduleServicesContent}>
-              <ServiceCount servicesCount={scheduleServicesCount} serviceName="Schedule Service" />
+              <ServiceCount servicesCount={scheduleServicesCount} serviceName="Schedule Service" color="#A0E7E5" />
             </IonCol>
             <IonCol onClick={viewPenaltyContent}>
-              <ServiceCount servicesCount={penaltyCount} serviceName="penalties" />
+              <ServiceCount servicesCount={penaltyCount} serviceName="penalties" color="#FFAEBC"/>
             </IonCol>
           </IonRow>
         </IonGrid>
 
-        <IonFooter style={{ borderTop: "1px solid lightgrey", marginTop: "2rem", paddingTop: "1rem", }}>
-          <IonToolbar>
-            <IonTitle className="serviceTitle">{serviceTitle}</IonTitle>
-          </IonToolbar>
-          <IonToolbar>
+        {/* <IonFooter style={{ marginTop: "2rem", paddingTop: "1rem", }}> */}
+        <IonHeader>
+        <IonToolbar>
+          <IonTitle>
+            {serviceTitle}
+          </IonTitle>
+        </IonToolbar>
+        </IonHeader>
+
+        <IonToolbar>
             <IonAccordionGroup>
 
               <ServiceCustomer
@@ -116,7 +121,8 @@ const LabourDashboard: React.FC = () => {
 
             </IonAccordionGroup>
           </IonToolbar>
-        </IonFooter>
+          
+        {/* </IonFooter> */}
       </IonContent>
     </IonPage>
   );
