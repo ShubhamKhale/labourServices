@@ -25,15 +25,18 @@ import {
 import classes from "./LabourDashboard.module.css";
 import { pin, settingsOutline } from "ionicons/icons";
 import { useState } from "react";
+import ServiceCount from "../components/ServiceCount";
 import ServiceCustomer from "../components/ServiceCustomer";
 const LabourDashboard: React.FC = () => {
   const [labourStatusMode, setLabourStatusMode] = useState("warning");
   const [labourStatus, setLabourStatus] = useState("INACTIVE");
-  const [completedServices, setCompletedServicest] = useState(0);
-  const [pendingServices, setPendingServices] = useState(0);
-  const [scheduleServices, setScheduleServices] = useState(0);
-  const [penalties, setPenalties] = useState(0);
 
+  const [completedServicesCount, setCompletedServicesCount] = useState(0);
+  const [pendingServicesCount, setPendingServicesCount] = useState(0);
+  const [scheduleServicesCount, setScheduleServicesCount] = useState(0);
+  const [penaltyCount, setPenaltyCount] = useState(0);
+
+  const [serviceTitle, setServiceTitle] = useState("Completed Service");
   function changeStatus() {
     if (labourStatus === "INACTIVE") {
       setLabourStatus("ACTIVE");
@@ -44,6 +47,21 @@ const LabourDashboard: React.FC = () => {
     }
   }
 
+  function viewCompletedServicesContent() {
+    setServiceTitle("Completed Services");
+  }
+
+  function viewPendingServicesContent() {
+    setServiceTitle("Pending Services");
+  }
+
+  function viewScheduleServicesContent() {
+    setServiceTitle("Schedule Services");
+  }
+
+  function viewPenaltyContent() {
+    setServiceTitle("Penalties");
+  }
 
   return (
     <IonPage>
@@ -59,46 +77,27 @@ const LabourDashboard: React.FC = () => {
         <IonGrid className={classes.gridContainer}>
           <IonButton className={classes.labourStatus} size="large" color={labourStatusMode} onClick={changeStatus}>{labourStatus}</IonButton>
           <IonRow>
-            <IonCol>
-              <IonCard className={classes.card}>
-                <IonCardHeader id="completedServicesTitle">
-                  <p className={classes.sam}>{completedServices}</p>
-                  <IonCardTitle className={classes.sam2}>Completed Services</IonCardTitle>
-                </IonCardHeader>
-              </IonCard>
+            <IonCol onClick={viewCompletedServicesContent}>
+              <ServiceCount servicesCount={completedServicesCount} serviceName="Completed Service" />
             </IonCol>
-            <IonCol>
-              <IonCard className={classes.card}>
-                <IonCardHeader id="pendingServicesTitle">
-                  <p className={classes.sam}>{pendingServices}</p>
-                  <IonCardTitle className={classes.sam2}>Pending Services</IonCardTitle>
-                </IonCardHeader>
-              </IonCard>
+            <IonCol onClick={viewPendingServicesContent}>
+              <ServiceCount servicesCount={pendingServicesCount} serviceName="Pending Service" />
             </IonCol>
           </IonRow>
           <IonRow>
-            <IonCol>
-              <IonCard className={classes.card}>
-                <IonCardHeader id="scheduleServicesTitle">
-                  <p className={classes.sam}>{scheduleServices}</p>
-                  <IonCardTitle className={classes.sam2}>
-                    Schedule Services
-                  </IonCardTitle>
-                </IonCardHeader>
-              </IonCard>
+            <IonCol onClick={viewScheduleServicesContent}>
+              <ServiceCount servicesCount={scheduleServicesCount} serviceName="Schedule Service" />
             </IonCol>
-            <IonCol>
-              <IonCard className={classes.card}>
-                <IonCardHeader id="penaltiesTitle">
-                  <p className={classes.sam}>{penalties}</p>
-                  <IonCardTitle className={classes.sam2}>Penalties</IonCardTitle>
-                </IonCardHeader>
-              </IonCard>
+            <IonCol onClick={viewPenaltyContent}>
+              <ServiceCount servicesCount={penaltyCount} serviceName="penalties" />
             </IonCol>
           </IonRow>
         </IonGrid>
 
         <IonFooter style={{ borderTop: "1px solid lightgrey", marginTop: "2rem", paddingTop: "1rem", }}>
+          <IonToolbar>
+            <IonTitle className="serviceTitle">{serviceTitle}</IonTitle>
+          </IonToolbar>
           <IonToolbar>
             <IonAccordionGroup>
 
