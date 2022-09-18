@@ -41,7 +41,7 @@ const App: React.FC = () => (
       <Route path="/starting-page" exact component={StartingPage} />
 
       <Route path="/customer-allocation-labour" exact component={CustomerAllocateLabour} />
-
+      <Route path={'/otp'} exact component={Otp}/>
 
 
       <Route path="/select-services" render={() => <Redirect to={"/"} />} />
