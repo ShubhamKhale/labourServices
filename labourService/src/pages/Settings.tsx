@@ -129,6 +129,8 @@ const NewPage: React.FC = () => {
           isOpen={showLanguageeActionSheet}
           onDidDismiss={() => setLanguageActionSheet(false)}
           cssClass="my-custom-class"
+          keyboardClose = {true}
+          onWillDismiss = {(event)=>alert(event.detail.data)}
           buttons={[
             {
               text: "Use Device Language",

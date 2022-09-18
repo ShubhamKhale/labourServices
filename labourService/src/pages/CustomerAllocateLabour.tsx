@@ -12,23 +12,33 @@ function CustomerAllocateLabour() {
   const [modelOpen, setModelOpen] = useState(false);
 
   useLayoutEffect(() => setModelOpen(true));
+
+  function closeModal() {
+    modal.current?.dismiss();
+    history.push('/')
+  }
   return (
-    <IonPage>
+    <IonPage >
       <IonContent className="ion-padding">
-        <IonFabButton size="small" onClick={() => { history.push('/') }} className={classes.backfab} color="light">
+        <IonFabButton size="small" onClick={() => closeModal()} className={classes.backfab} color="light">
           <IonIcon icon={arrowBackOutline} />
         </IonFabButton>
+        <IonModal
+          ref={modal}
+          isOpen={modelOpen}
+          initialBreakpoint={0.35}
+          breakpoints={[0, 0.25, 0.35]}
+          showBackdrop={false}
+          backdropBreakpoint={0.75}
+          onDidDismiss={() => setModelOpen(false)}
 
-        <IonModal ref={modal} isOpen={modelOpen} initialBreakpoint={0.35} breakpoints={[0, 0.25, 0.35]} showBackdrop={true} >
+        >
           <IonContent className="ion-padding">
             <ChangeText /><br />
             <IonProgressBar type="indeterminate"></IonProgressBar><br />
             <ProfilePhoto />
             <IonButton
-              onClick={() => {
-                setModelOpen(false);
-                history.push('/');
-              }}
+              onClick={() => closeModal()}
               className={classes.button}
               expand="block"
               color="danger"

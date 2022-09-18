@@ -15,6 +15,7 @@ import {
   IonItem,
   IonLabel,
   IonPage,
+  IonSkeletonText,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -25,17 +26,20 @@ import {
   logoFacebook,
   logoGithub,
   logoInstagram,
-  logoReact,
   logoTwitter,
   newspaperOutline,
   pin,
 } from "ionicons/icons";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AppLogoCard from "../../components/AppLogoCard";
 import classes from "./About.module.css";
 
 const About: React.FC = () => {
+  const [loaded, setLoaded] = useState(false);
+  const lazyImgLoadingStyle = { height: '150px', 'width': '150px', 'border-radius': '25px' };
+
+  setTimeout(() => setLoaded(true), 500);
   return (
     <IonPage>
       <IonHeader>
@@ -50,8 +54,10 @@ const About: React.FC = () => {
       <IonContent >
         <div className={classes.acard}>
           <div className={classes.acard_image}>
-            {" "}
-            <img src="https://i.redd.it/b3esnz5ra34y.jpg" />{" "}
+
+            {loaded && <img src="https://i.redd.it/b3esnz5ra34y.jpg" />}
+
+            {!loaded && <IonSkeletonText animated={true} style={lazyImgLoadingStyle}></IonSkeletonText>}
           </div>
         </div>
         <div className={classes.acard_title}>
