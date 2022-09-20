@@ -1,4 +1,3 @@
-
 import {
   IonActionSheet,
   IonAlert,
@@ -12,7 +11,10 @@ import {
   IonItem,
   IonLabel,
   IonList,
+  IonModal,
   IonPage,
+  IonRadio,
+  IonRadioGroup,
   IonRow,
   IonSelect,
   IonSelectOption,
@@ -22,16 +24,20 @@ import {
   useIonAlert,
 } from "@ionic/react";
 import {
+  caretForwardCircle,
   checkmarkOutline,
   chevronForwardOutline,
   closeOutline,
   contrastOutline,
   createOutline,
+  heart,
   informationCircleOutline,
   languageOutline,
   logOutOutline,
   options,
   personOutline,
+  share,
+  trash,
 } from "ionicons/icons";
 import React, { useState } from "react";
 import SettingBtn from "../components/SettingBtn";
@@ -40,10 +46,10 @@ import Theme from "./setting_pages/Theme";
 
 const NewPage: React.FC = () => {
   const [presentAlert] = useIonAlert();
-  const [showThemeActionSheet, setThemeShowActionSheet] = useState(false);
-  const [showLanguageeActionSheet, setLanguageActionSheet] = useState(false);
+  const [showThemeModal, setThemeModal] = useState(false);
+  const [showLanguageModal, setLanguageModal] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
-  const [theme, setTheme] = useState('destructive');
+  const [theme, setTheme] = useState("destructive");
 
   return (
     <IonPage>
@@ -64,119 +70,110 @@ const NewPage: React.FC = () => {
           to={"/setting/profile"}
         />
 
-
+        
         <SettingBtn
           text={"Theme"}
           icon={contrastOutline}
           to={"/setting"}
           onClick={() => {
-            setThemeShowActionSheet(true);
+            setThemeModal(true);
           }}
         />
-        <IonActionSheet
-          isOpen={showThemeActionSheet}
-          onDidDismiss={() => setThemeShowActionSheet(false)}
-          subHeader="Theme"
-          buttons={[
-            {
-              text: "Use Device Theme",
-              role: "destructive",
-              icon: checkmarkOutline,
-              id: "delete-button",
-              data: {
-                type: "delete",
-              },
-              handler: () => {
-                console.log("Device Language");
-              },
-            },
-            {
-              text: "Dark Theme",
-              icon: checkmarkOutline,
-              data: 10,
-              handler: () => {
-                console.log("Dark Theme Selected");
-              },
-            },
-            {
-              text: "Light Theme",
-              icon: checkmarkOutline,
-              data: "Data value",
-              handler: () => {
-                console.log("Light Theme Selected");
-              },
-            },
-            {
-              text: "Cancel",
-              icon: closeOutline,
-              role: "cancel",
-              handler: () => {
-                console.log("Cancel clicked");
-              },
-            },
-          ]}
-        ></IonActionSheet>
+          <SettingBtn
+            text={"Language"}
+            icon={languageOutline}
+            to={"/setting"}
+            onClick={() => {
+              setLanguageModal(true);
+            }}
+          />
 
-        <SettingBtn
-          text={"Language"}
-          icon={languageOutline}
-          to={"/setting"}
-          onClick={() => {
-            setLanguageActionSheet(true);
-          }}
-        />
-        <IonActionSheet
-          isOpen={showLanguageeActionSheet}
-          onDidDismiss={() => setLanguageActionSheet(false)}
-          cssClass="my-custom-class"
-          keyboardClose = {true}
-          onWillDismiss = {(event)=>alert(event.detail.data)}
-          buttons={[
-            {
-              text: "Use Device Language",
-              role: "destructive",
-              icon: checkmarkOutline,
-              id: "delete-button",
-              data: {
-                type: "delete",
-              },
-              handler: () => {
-                console.log("Device Language");
-              },
-            },
-            {
-              text: "English",
-              icon: checkmarkOutline,
-              data: 10,
-              handler: () => {
-                console.log("English Selected");
-              },
-            },
-            {
-              text: "Hindi",
-              icon: checkmarkOutline,
-              data: "Data value",
-              handler: () => {
-                console.log("Hindi Selected");
-              },
-            },
-            {
-              text: "Marathi",
-              icon: checkmarkOutline,
-              handler: () => {
-                console.log("Marathi Selected");
-              },
-            },
-            {
-              text: "Cancel",
-              icon: closeOutline,
-              role: "cancel",
-              handler: () => {
-                console.log("Cancel clicked");
-              },
-            },
-          ]}
-        ></IonActionSheet>
+          {/* theme actionsheet */}
+        <IonModal
+          isOpen={showThemeModal}
+          initialBreakpoint={0.27}
+          handle={false}
+          onDidDismiss={() => setThemeModal(false)}
+        >
+          <IonToolbar>
+            <IonButtons slot={"end"}>
+              <IonButton
+                onClick={() => setThemeModal(false)}
+                slot="end"
+                color="secondary"
+              >
+                Close
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+
+          <IonContent className="ion-padding">
+            <IonList id="ion-align-items-center" lines="none">
+              <IonRadioGroup>
+                <IonItem>
+                  <IonLabel>Use device theme</IonLabel>
+                  <IonRadio slot="start" value="cord" />
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>Dark theme</IonLabel>
+                  <IonRadio slot="start" value="duesenberg" />
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>Light theme</IonLabel>
+                  <IonRadio slot="start" value="hudson" />
+                </IonItem>
+              </IonRadioGroup>
+            </IonList>
+          </IonContent>
+        </IonModal>
+
+        {/* language actionsheet */}
+        <IonModal
+          isOpen={showLanguageModal}
+          initialBreakpoint={0.32}
+          handle={false}
+          onDidDismiss={() => setLanguageModal(false)}
+        >
+          <IonToolbar>
+            <IonButtons slot={"end"}>
+              <IonButton
+                onClick={() => setLanguageModal(false)}
+                slot="end"
+                color="secondary"
+              >
+                Close
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+
+          <IonContent className="ion-padding">
+            <IonList id="ion-align-items-center" lines="none">
+              <IonRadioGroup>
+                <IonItem>
+                  <IonLabel>Use device Langauge</IonLabel>
+                  <IonRadio slot="start" value="cord" />
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>English</IonLabel>
+                  <IonRadio slot="start" value="duesenberg" />
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>Hindi</IonLabel>
+                  <IonRadio slot="start" value="hudson" />
+                </IonItem>
+
+                <IonItem>
+                  <IonLabel>Marathi</IonLabel>
+                  <IonRadio slot="start" value="hudson" />
+                </IonItem>
+              </IonRadioGroup>
+            </IonList>
+          </IonContent>
+        </IonModal>
 
         {/* https://ionicframework.com/docs/api/action-sheet */}
         <IonAlert
@@ -191,7 +188,7 @@ const NewPage: React.FC = () => {
           icon={logOutOutline}
           to={"/setting"}
           onClick={() => setIsLogout(true)}
-          color='danger'
+          color="danger"
         />
 
         <SettingBtn
@@ -199,12 +196,7 @@ const NewPage: React.FC = () => {
           to="/setting/about"
           icon={informationCircleOutline}
         />
-
       </IonContent>
-
-
-
-
     </IonPage>
   );
 };
