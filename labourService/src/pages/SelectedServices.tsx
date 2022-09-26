@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   IonButton,
   IonCol,
@@ -57,6 +58,7 @@ const SelectedServices: React.FC = () => {
   };
   const [presentAlert] = useIonAlert();
   const history = useHistory();
+  const{t, i18n}= useTranslation();
   return (
     <IonPage>
       <IonHeader>
@@ -86,7 +88,7 @@ const SelectedServices: React.FC = () => {
 
 
           </IonButtons>
-          <IonTitle onClick={() => history.push('/labour-dashboard')}>Labour Services</IonTitle>
+          <IonTitle onClick={() => history.push('/labour-dashboard')}>{t("title")}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -188,13 +190,13 @@ const SelectedServices: React.FC = () => {
         <IonGrid className={classes.gridServiceContainer}>
           <IonRow>
             <IonCol size="6">
-
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text="Electrician" />
+                    
+              <SelectServiceBtn onClick={() => setIsOpen(true)}  text={t("electrician")} />
 
             </IonCol>
             <IonCol size="6">
 
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text="Plumber" />
+              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("plumber")} />
 
             </IonCol>
           </IonRow>
@@ -202,30 +204,30 @@ const SelectedServices: React.FC = () => {
           <IonRow>
             <IonCol size="6">
 
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text="Mason" />
+              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("mason")} />
 
             </IonCol>
             <IonCol size="6">
 
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text="Carpenter" />
+              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("carpenter")} />
 
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="6">
 
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text="Painter" />
+              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("painter")} />
             </IonCol>
             <IonCol size="6">
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text="Pest Controller" />
+              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("pest_controller")} />
             </IonCol>
           </IonRow>
         </IonGrid>
 
         <IonSlides options={slideOpts} className={classes.slide}>
-          <Banner text="Explore" src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
-          <Banner text="Prices" src={"https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"} />
-          <Banner text="Offers" src={"https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"} />
+          <Banner text={t("explore")} src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
+          <Banner text={t("prices")} src={"https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"} />
+          <Banner text={t("offers")} src={"https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"} />
         </IonSlides>
 
       </IonContent>

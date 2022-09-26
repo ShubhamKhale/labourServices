@@ -1,4 +1,5 @@
 import { IonAvatar, IonIcon, IonImg, IonPage, useIonAlert } from "@ionic/react";
+import { t } from "i18next";
 import { cameraOutline } from "ionicons/icons";
 import classes from "./ProfilePhoto.module.css";
 
@@ -13,13 +14,13 @@ function ProfilePhoto() {
             presentAlert({
               buttons: [
                 {
-                  text: 'Take photo',
+                  text: t("take_photo"),
                   handler: () => {
                     alert('sdafdafdda');
                   }
                 },
                 {
-                  text: 'choose existing photo',
+                  text: t("choose_existing_photo"),
                 },
 
 

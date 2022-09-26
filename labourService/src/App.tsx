@@ -3,6 +3,7 @@ import { IonApp, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import '@ionic/react/css/core.css';
 
+import i18n from "./i18n";
 import Settings from './pages/Settings';
 import About from './pages/setting_pages/About';
 import Language from './pages/setting_pages/Language';

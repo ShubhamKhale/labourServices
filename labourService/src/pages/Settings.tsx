@@ -1,13 +1,10 @@
 import {
-  IonActionSheet,
   IonAlert,
   IonBackButton,
   IonButton,
   IonButtons,
   IonContent,
-  IonGrid,
   IonHeader,
-  IonIcon,
   IonItem,
   IonLabel,
   IonList,
@@ -15,34 +12,23 @@ import {
   IonPage,
   IonRadio,
   IonRadioGroup,
-  IonRow,
-  IonSelect,
-  IonSelectOption,
   IonTitle,
   IonToolbar,
-  useIonActionSheet,
   useIonAlert,
 } from "@ionic/react";
 import {
-  caretForwardCircle,
-  checkmarkOutline,
   chevronForwardOutline,
-  closeOutline,
   contrastOutline,
-  createOutline,
-  heart,
   informationCircleOutline,
   languageOutline,
   logOutOutline,
-  options,
   personOutline,
-  share,
-  trash,
 } from "ionicons/icons";
 import React, { useState } from "react";
 import SettingBtn from "../components/SettingBtn";
 import ProfilePhoto from "../components/ProfilePhoto";
-import Theme from "./setting_pages/Theme";
+import { t } from "i18next";
+import i18n from "../i18n";
 
 const NewPage: React.FC = () => {
   const [presentAlert] = useIonAlert();
@@ -50,6 +36,12 @@ const NewPage: React.FC = () => {
   const [showLanguageModal, setLanguageModal] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
   const [theme, setTheme] = useState("destructive");
+  const changeLanguage = (ln: any) =>{
+    return () =>{
+      i18n.changeLanguage(ln);
+      console.log(`language changed to ${ln}`)
+    }
+  }
 
   return (
     <IonPage>
@@ -58,21 +50,21 @@ const NewPage: React.FC = () => {
           <IonButtons slot="secondary">
             <IonBackButton defaultHref="/" icon={chevronForwardOutline} />
           </IonButtons>
-          <IonTitle>Setting</IonTitle>
+          <IonTitle>{t("setting")}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
         <ProfilePhoto />
 
         <SettingBtn
-          text={"Profile"}
+          text = {t("profile")}
           icon={personOutline}
           to={"/setting/profile"}
         />
 
         
         <SettingBtn
-          text={"Theme"}
+          text = {t("theme")}
           icon={contrastOutline}
           to={"/setting"}
           onClick={() => {
@@ -80,7 +72,7 @@ const NewPage: React.FC = () => {
           }}
         />
           <SettingBtn
-            text={"Language"}
+            text = {t("language")}
             icon={languageOutline}
             to={"/setting"}
             onClick={() => {
@@ -102,7 +94,7 @@ const NewPage: React.FC = () => {
                 slot="end"
                 color="secondary"
               >
-                Close
+                {t("close")}
               </IonButton>
             </IonButtons>
           </IonToolbar>
@@ -111,17 +103,17 @@ const NewPage: React.FC = () => {
             <IonList id="ion-align-items-center" lines="none">
               <IonRadioGroup>
                 <IonItem>
-                  <IonLabel>Use device theme</IonLabel>
+                  <IonLabel>{t("Use_device_theme")}</IonLabel>
                   <IonRadio slot="start" value="cord" />
                 </IonItem>
 
                 <IonItem>
-                  <IonLabel>Dark theme</IonLabel>
+                  <IonLabel>{t("dark_theme")}</IonLabel>
                   <IonRadio slot="start" value="duesenberg" />
                 </IonItem>
 
                 <IonItem>
-                  <IonLabel>Light theme</IonLabel>
+                  <IonLabel>{t("light_theme")}</IonLabel>
                   <IonRadio slot="start" value="hudson" />
                 </IonItem>
               </IonRadioGroup>
@@ -143,7 +135,7 @@ const NewPage: React.FC = () => {
                 slot="end"
                 color="secondary"
               >
-                Close
+                {t("close")}
               </IonButton>
             </IonButtons>
           </IonToolbar>
@@ -152,23 +144,23 @@ const NewPage: React.FC = () => {
             <IonList id="ion-align-items-center" lines="none">
               <IonRadioGroup>
                 <IonItem>
-                  <IonLabel>Use device Langauge</IonLabel>
-                  <IonRadio slot="start" value="cord" />
+                  <IonLabel>{t("use_device_language")}</IonLabel>
+                  <IonRadio onClick={changeLanguage("en")} slot="start" value="cord" />
                 </IonItem>
 
                 <IonItem>
-                  <IonLabel>English</IonLabel>
-                  <IonRadio slot="start" value="duesenberg" />
+                  <IonLabel>{t("english")}</IonLabel>
+                  <IonRadio onClick={changeLanguage("en")} slot="start" value="duesenberg" />
                 </IonItem>
 
                 <IonItem>
-                  <IonLabel>Hindi</IonLabel>
-                  <IonRadio slot="start" value="hudson" />
+                  <IonLabel>{t("hindi")}</IonLabel>
+                  <IonRadio onClick={changeLanguage("hi")} slot="start" value="hudson" />
                 </IonItem>
 
                 <IonItem>
-                  <IonLabel>Marathi</IonLabel>
-                  <IonRadio slot="start" value="hudson" />
+                  <IonLabel>{t("marathi")}</IonLabel>
+                  <IonRadio onClick={changeLanguage("ma")} slot="start" value="a" />
                 </IonItem>
               </IonRadioGroup>
             </IonList>
@@ -179,12 +171,12 @@ const NewPage: React.FC = () => {
         <IonAlert
           isOpen={isLogout}
           onDidDismiss={() => setIsLogout(false)}
-          header="Logout"
-          subHeader="Are you sure?"
-          buttons={["Yes", "No"]}
+          header={t("logout")}
+          subHeader={t("Are_you_sure?")}
+          buttons={[t("yes"), t("no")]}
         />
         <SettingBtn
-          text={"LogOut"}
+          text = {t("logout")}
           icon={logOutOutline}
           to={"/setting"}
           onClick={() => setIsLogout(true)}
@@ -192,7 +184,7 @@ const NewPage: React.FC = () => {
         />
 
         <SettingBtn
-          text={"About"}
+          text = {t("about")}
           to="/setting/about"
           icon={informationCircleOutline}
         />

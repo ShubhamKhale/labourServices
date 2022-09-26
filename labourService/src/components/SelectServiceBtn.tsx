@@ -4,7 +4,7 @@
 import classes from './SelectServiceBtn.module.css'
 
 import { IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent } from "@ionic/react";
-
+import { t } from 'i18next';
 
 
 
