@@ -20,7 +20,7 @@ import {
   IonLabel,
   IonPopover,
 } from "@ionic/react";
-// import ExploreContainer from "../components/ExploreContainer";
+
 import classes from "./SelectedServices.module.css";
 import { settingsOutline, ellipsisHorizontal, ellipsisVertical, refreshOutline, shareSocialOutline } from
   "ionicons/icons";
@@ -138,9 +138,7 @@ const SelectedServices: React.FC = () => {
                             handler: () => {
                               setIsOpen(false);
                               history.push('/customer-allocation-labour');
-
-
-
+                              
                             }
                           },
                         ],
