@@ -190,5 +190,22 @@ a{
   font-family: 'Times New Roman', Times, serif;
   font-size: 2rem;
 }
+.padding{
+   padding-left: 10px;
+ }
+
+.paddingTitleSchedule{
+   padding-left: 20px;
+ }
+
+.paddingSchedule{
+  /* padding: 30px; */
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 1px;
+  position: sticky;
+  margin-bottom: 20px;
+  margin-left: 21px;
+}
 
 
