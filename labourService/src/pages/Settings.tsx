@@ -35,15 +35,11 @@ const NewPage: React.FC = () => {
   const [showThemeModal, setThemeModal] = useState(false);
   const [showLanguageModal, setLanguageModal] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
-  const [theme, setTheme] = useState("destructive");
-  const changeLanguage = (ln: any) =>{
-    return () =>{
-      i18n.changeLanguage(ln);
-      console.log(`language changed to ${ln}`)
-    }
-  }
+  const [currentLanguage, setCurrentLanguage] = useState("en");
 
-  return (
+  i18n.changeLanguage(currentLanguage);
+
+  return (        
     <IonPage>
       <IonHeader>
         <IonToolbar>
@@ -145,22 +141,22 @@ const NewPage: React.FC = () => {
               <IonRadioGroup>
                 <IonItem>
                   <IonLabel>{t("use_device_language")}</IonLabel>
-                  <IonRadio onClick={changeLanguage("en")} slot="start" value="cord" />
+                  <IonRadio onClick={()=> setCurrentLanguage("en")} slot="start" value="cord" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("english")}</IonLabel>
-                  <IonRadio onClick={changeLanguage("en")} slot="start" value="duesenberg" />
+                  <IonRadio  onClick={()=> setCurrentLanguage("en")} slot="start" value="duesenberg" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("hindi")}</IonLabel>
-                  <IonRadio onClick={changeLanguage("hi")} slot="start" value="hudson" />
+                  <IonRadio   onClick={()=> setCurrentLanguage("hi")}  slot="start" value="hudson" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("marathi")}</IonLabel>
-                  <IonRadio onClick={changeLanguage("ma")} slot="start" value="a" />
+                  <IonRadio  onClick={()=> setCurrentLanguage("ma")} slot="start" value="a" />
                 </IonItem>
               </IonRadioGroup>
             </IonList>
@@ -194,3 +190,7 @@ const NewPage: React.FC = () => {
 };
 
 export default NewPage;
+function setSelectedValue(value: string) {
+  throw new Error("Function not implemented.");
+}
+
