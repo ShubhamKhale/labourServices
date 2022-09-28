@@ -22,8 +22,13 @@ import {
 } from "@ionic/react";
 // import ExploreContainer from "../components/ExploreContainer";
 import classes from "./SelectedServices.module.css";
-import { settingsOutline, ellipsisHorizontal, ellipsisVertical, refreshOutline, shareSocialOutline } from
-  "ionicons/icons";
+import {
+  settingsOutline,
+  ellipsisHorizontal,
+  ellipsisVertical,
+  refreshOutline,
+  shareSocialOutline,
+} from "ionicons/icons";
 import SelectServiceBtn from "../components/SelectServiceBtn";
 import Banner from "../components/Banner";
 import { useHistory } from "react-router-dom";
@@ -43,8 +48,6 @@ const SelectedServices: React.FC = () => {
     scrollbar: true,
     loop: true,
 
-
-
     coverflowEffect: {
       freeMode: true,
       rotate: 50,
@@ -58,7 +61,7 @@ const SelectedServices: React.FC = () => {
   };
   const [presentAlert] = useIonAlert();
   const history = useHistory();
-  const{t, i18n}= useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <IonPage>
       <IonHeader>
@@ -69,26 +72,35 @@ const SelectedServices: React.FC = () => {
             </IonButton>
           </IonButtons>
           <IonButtons slot="primary">
-            <IonButton id='xx'>
-              <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical} />
+            <IonButton id="xx">
+              <IonIcon
+                slot="icon-only"
+                ios={ellipsisHorizontal}
+                md={ellipsisVertical}
+              />
             </IonButton>
 
-            <IonPopover trigger='xx' dismissOnSelect={true} reference="event" showBackdrop={false}>
+            <IonPopover
+              trigger="xx"
+              dismissOnSelect={true}
+              reference="event"
+              showBackdrop={false}
+            >
               <IonContent class="ion-padding">
                 <IonItem>
                   <IonIcon icon={refreshOutline} slot="start" />
-                  <IonLabel>Restart App</IonLabel>
+                  <IonLabel>{t("restart_app")}</IonLabel>
                 </IonItem>
                 <IonItem>
                   <IonIcon icon={shareSocialOutline} slot="start" />
-                  <IonLabel>Share App</IonLabel>
+                  <IonLabel>{t("share_app")}</IonLabel>
                 </IonItem>
               </IonContent>
             </IonPopover>
-
-
           </IonButtons>
-          <IonTitle onClick={() => history.push('/labour-dashboard')}>{t("title")}</IonTitle>
+          <IonTitle onClick={() => history.push("/labour-dashboard")}>
+            {t("title")}
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -101,88 +113,89 @@ const SelectedServices: React.FC = () => {
           ></IonSearchbar>
         </IonToolbar> */}
 
-        <IonModal ref={modal} isOpen={isOpen} initialBreakpoint={0.25} breakpoints={[0, 0.25, 0.5, 1]} handle={false}
+        <IonModal
+          ref={modal}
+          isOpen={isOpen}
+          initialBreakpoint={0.25}
+          breakpoints={[0, 0.25, 0.5, 1]}
+          handle={false}
           onDidDismiss={() => setIsOpen(false)}
-
         >
           <IonToolbar>
-            <IonButtons slot={'end'}>
-              <IonButton onClick={() => setIsOpen(false)}
+            <IonButtons slot={"end"}>
+              <IonButton
+                onClick={() => setIsOpen(false)}
                 slot="end"
                 color="secondary"
               >
-                Close
+                {t("close")}
               </IonButton>
             </IonButtons>
           </IonToolbar>
 
-
-          <IonContent className='ion-padding'>
+          <IonContent className="ion-padding">
             <IonList id="ion-align-items-center">
               <IonGrid>
                 <IonRow>
-                  <IonCol size="3" offset='0.8'>
-                    <IonButton className={classes.serviceBtn} color="danger" onClick={() =>
-                      presentAlert({
-                        header: "Are you sure?",
-                        cssClass: "custom-alert",
-                        buttons: [
-                          {
-                            text: "No",
-                            cssClass: "alert-button-cancel",
-
-                          },
-                          {
-                            text: "Yes",
-                            cssClass: "alert-button-confirm",
-                            handler: () => {
-                              setIsOpen(false);
-                              history.push('/customer-allocation-labour');
-
-
-
-                            }
-                          },
-                        ],
-                      })
-                    }
+                  <IonCol size="3" offset="0.8">               
+                    <IonButton
+                      className={classes.serviceBtn}
+                      color="danger"
+                      onClick={() =>
+                        presentAlert({
+                          header: t("Are_you_sure?"),
+                          cssClass: "custom-alert",
+                          buttons: [
+                            {
+                              text: t("no"),
+                              cssClass: "alert-button-cancel",
+                            },
+                            {
+                              text: t("yes"),
+                              cssClass: "alert-button-confirm",
+                              handler: () => {
+                                setIsOpen(false);
+                                history.push("/customer-allocation-labour");
+                              },
+                            },
+                          ],
+                        })
+                      }
                     >
-                      RAPID
+                      {t("rapid")}
                     </IonButton>
                   </IonCol>
                   <IonCol size="3" offset="0.5">
-                    <IonButton className={classes.serviceBtn} color="warning" onClick={() =>
-                      presentAlert({
-                        header: "Are you sure?",
-                        cssClass: "custom-alert",
-                        buttons: [
-                          {
-                            text: "No",
-                            cssClass: "alert-button-cancel",
-                          },
-                          {
-                            text: "Yes",
-                            cssClass: "alert-button-confirm",
-                          },
-                        ],
-                      })
-                    }
+                    <IonButton
+                      className={classes.serviceBtn}
+                      color="warning"
+                      onClick={() =>
+                        presentAlert({
+                          header: t("Are_you_sure?"),
+                          cssClass: "custom-alert",
+                          buttons: [
+                            {
+                              text: t("no"),
+                              cssClass: "alert-button-cancel",
+                            },
+                            {
+                              text: t("yes"),
+                              cssClass: "alert-button-confirm",
+                            },
+                          ],
+                        })
+                      }
                     >
-                      MODERATE
+                      {t("moderate")}
                     </IonButton>
                   </IonCol>
                   <IonCol size="3" offset="0.5">
-                    <IonButton className={classes.serviceBtn} color="success"
-                    >
-                      SCHEDULE
+                    <IonButton className={classes.serviceBtn} color="success">
+                      {t("schedule")}
                     </IonButton>
                   </IonCol>
                 </IonRow>
               </IonGrid>
-
-
-
-
             </IonList>
           </IonContent>
         </IonModal>
@@ -190,46 +203,67 @@ const SelectedServices: React.FC = () => {
         <IonGrid className={classes.gridServiceContainer}>
           <IonRow>
             <IonCol size="6">
-                    
-              <SelectServiceBtn onClick={() => setIsOpen(true)}  text={t("electrician")} />
-
+              <SelectServiceBtn
+                onClick={() => setIsOpen(true)}
+                text={t("electrician")}
+              />
             </IonCol>
             <IonCol size="6">
-
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("plumber")} />
-
+              <SelectServiceBtn
+                onClick={() => setIsOpen(true)}
+                text={t("plumber")}
+              />
             </IonCol>
           </IonRow>
 
           <IonRow>
             <IonCol size="6">
-
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("mason")} />
-
+              <SelectServiceBtn
+                onClick={() => setIsOpen(true)}
+                text={t("mason")}
+              />
             </IonCol>
             <IonCol size="6">
-
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("carpenter")} />
-
+              <SelectServiceBtn
+                onClick={() => setIsOpen(true)}
+                text={t("carpenter")}
+              />
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="6">
-
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("painter")} />
+              <SelectServiceBtn
+                onClick={() => setIsOpen(true)}
+                text={t("painter")}
+              />
             </IonCol>
             <IonCol size="6">
-              <SelectServiceBtn onClick={() => setIsOpen(true)} text={t("pest_controller")} />
+              <SelectServiceBtn
+                onClick={() => setIsOpen(true)}
+                text={t("pest_controller")}
+              />
             </IonCol>
           </IonRow>
         </IonGrid>
 
         <IonSlides options={slideOpts} className={classes.slide}>
-          <Banner text={t("explore")} src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"} />
-          <Banner text={t("prices")} src={"https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"} />
-          <Banner text={t("offers")} src={"https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"} />
+          <Banner
+            text={t("explore")}
+            src={"https://cdn.wallpapersafari.com/99/68/CIuyYq.jpg"}
+          />
+          <Banner
+            text={t("prices")}
+            src={
+              "https://th.bing.com/th/id/OIP.iCapiT_p3Cy7So81MSHrLQHaEK?pid=ImgDet&rs=1"
+            }
+          />
+          <Banner
+            text={t("offers")}
+            src={
+              "https://th.bing.com/th/id/R.cbb1adaf062ddd45475898322570e53b?rik=NHp%2fY0GBHtwtkA&riu=http%3a%2f%2fwallpaperheart.com%2fwp-content%2fuploads%2f2018%2f04%2fHD-Scenery-Wallpapers-hd-scenery-wallpaper.jpg&ehk=bLfDdPMS6bighCU5TfuLfAfPv%2b5qqY%2bZNuqPxhFh3Qo%3d&risl=&pid=ImgRaw&r=0"
+            }
+          />
         </IonSlides>
-
       </IonContent>
     </IonPage>
   );

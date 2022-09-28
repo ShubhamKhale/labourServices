@@ -1,5 +1,6 @@
+import { t } from "i18next";
 import { useState, useCallback, useEffect } from "react";
-const names = ['Finding Labour Nearby you...', 'Fetching results...', 'Getting Information....']
+export const names = [t("Finding_Labour_Nearby_you..."), t("Fetching_results..."), t("Getting_Information....")]
 
 function ChangeText() {
     const [newName, setnewName] = useState("");

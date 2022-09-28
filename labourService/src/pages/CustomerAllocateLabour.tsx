@@ -5,6 +5,7 @@ import ChangeText from '../components/ChangeText';
 import { arrowBackOutline } from 'ionicons/icons';
 import classes from './CustomerAllocateLabour.module.css';
 import { useHistory } from 'react-router-dom';
+import { t } from 'i18next';
 
 function CustomerAllocateLabour() {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -42,7 +43,7 @@ function CustomerAllocateLabour() {
               className={classes.button}
               expand="block"
               color="danger"
-            >Cancel</IonButton>
+            >{t("cancel")}</IonButton>
           </IonContent>
         </IonModal>
       </IonContent>

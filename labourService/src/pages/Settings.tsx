@@ -17,7 +17,7 @@ import {
   useIonAlert,
 } from "@ionic/react";
 import {
-  chevronForwardOutline,
+  chevronBackOutline,
   contrastOutline,
   informationCircleOutline,
   languageOutline,
@@ -36,6 +36,8 @@ const NewPage: React.FC = () => {
   const [showLanguageModal, setLanguageModal] = useState(false);
   const [isLogout, setIsLogout] = useState(false);
   const [currentLanguage, setCurrentLanguage] = useState("en");
+  const [selectedLanguage, setselectedLanguage] = useState<string>('devicelanguage');
+  const [selectedTheme, setselectedTheme] = useState<string>('devicetheme');
 
   i18n.changeLanguage(currentLanguage);
 
@@ -43,10 +45,10 @@ const NewPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot="secondary">
-            <IonBackButton defaultHref="/" icon={chevronForwardOutline} />
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" icon={chevronBackOutline} />
           </IonButtons>
-          <IonTitle>{t("setting")}</IonTitle>
+          <IonTitle slot="end">{t("setting")}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -97,20 +99,20 @@ const NewPage: React.FC = () => {
 
           <IonContent className="ion-padding">
             <IonList id="ion-align-items-center" lines="none">
-              <IonRadioGroup>
+              <IonRadioGroup value={selectedTheme} onIonChange={e => setselectedTheme(e.detail.value)}>
                 <IonItem>
                   <IonLabel>{t("Use_device_theme")}</IonLabel>
-                  <IonRadio slot="start" value="cord" />
+                  <IonRadio slot="start" value="devicetheme" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("dark_theme")}</IonLabel>
-                  <IonRadio slot="start" value="duesenberg" />
+                  <IonRadio slot="start" value="darktheme" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("light_theme")}</IonLabel>
-                  <IonRadio slot="start" value="hudson" />
+                  <IonRadio slot="start" value="lighttheme" />
                 </IonItem>
               </IonRadioGroup>
             </IonList>
@@ -138,25 +140,25 @@ const NewPage: React.FC = () => {
 
           <IonContent className="ion-padding">
             <IonList id="ion-align-items-center" lines="none">
-              <IonRadioGroup>
+              <IonRadioGroup value={selectedLanguage} onIonChange={e => setselectedLanguage(e.detail.value)}>
                 <IonItem>
                   <IonLabel>{t("use_device_language")}</IonLabel>
-                  <IonRadio onClick={()=> setCurrentLanguage("en")} slot="start" value="cord" />
+                  <IonRadio onClick={()=> setCurrentLanguage("en")} slot="start"  value="devicelanguage"/>
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("english")}</IonLabel>
-                  <IonRadio  onClick={()=> setCurrentLanguage("en")} slot="start" value="duesenberg" />
+                  <IonRadio   onClick={()=> setCurrentLanguage("en")} slot="start" value="english" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("hindi")}</IonLabel>
-                  <IonRadio   onClick={()=> setCurrentLanguage("hi")}  slot="start" value="hudson" />
+                  <IonRadio name= "foo"   onClick={()=> setCurrentLanguage("hi")}  slot="start" value="hindi" />
                 </IonItem>
 
                 <IonItem>
                   <IonLabel>{t("marathi")}</IonLabel>
-                  <IonRadio  onClick={()=> setCurrentLanguage("ma")} slot="start" value="a" />
+                  <IonRadio name= "foo" onClick={()=> setCurrentLanguage("ma")} slot="start" value="marathi" />
                 </IonItem>
               </IonRadioGroup>
             </IonList>
@@ -190,7 +192,7 @@ const NewPage: React.FC = () => {
 };
 
 export default NewPage;
-function setSelectedValue(value: string) {
+function setselectedLanguageValue(value: string) {
   throw new Error("Function not implemented.");
 }
 

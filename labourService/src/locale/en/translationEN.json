@@ -27,5 +27,14 @@
     "marathi": "Marathi",
     "Are_you_sure?": "Are you sure?",
     "yes": "YES",
-    "no": "NO"
+    "no": "NO",
+    "rapid": "RAPID",
+    "moderate": "MODERATE",
+    "schedule": "SCHEDULE",
+    "restart_app": "Restart App",
+    "share_app": "Share App",
+    "cancel": "Cancel",
+    "Finding_Labour_Nearby_you...": "Finding Labour Nearby you...",
+    "Fetching_results...": "Fetching results...",
+    "Getting_Information....": "Getting Information...."
 }

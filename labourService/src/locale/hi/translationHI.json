@@ -27,5 +27,14 @@
     "marathi": "मराठी",
     "Are_you_sure?": "क्या आपको यकीन है?",
     "yes": "हां",
-    "no": "नहीं"
+    "no": "नहीं",
+    "rapid": "तेज़",
+    "moderate": "मध्यम",
+    "schedule": "अनुसूची",
+    "restart_app": "पुनर्प्रारंभ करें",
+    "share_app": "शेयर करें",
+    "cancel": "Cancel",
+    "Finding_Labour_Nearby_you...": "अपने आस-पास लेबर ढूंढ रहे हैं...",
+    "Fetching_results...": "परिणाम लाए जा रहे हैं...",
+    "Getting_Information....": "सूचना हासिल करना...."
 }
