@@ -46,8 +46,7 @@ import ScheduleServiceDescription from "../components/ScheduleServiceDescription
 export let service = "No service";
 console.log(service);
 export function serviceFunc(service: string) {
-  return (service)
-
+  return service;
 }
 
 const SelectedServices: React.FC = () => {
@@ -123,28 +122,22 @@ const SelectedServices: React.FC = () => {
               <IonContent class="ion-padding">
                 <IonItem>
                   <IonIcon icon={refreshOutline} slot="start" />
-                  <IonLabel>Restart App</IonLabel>
+                  <IonLabel>{t("restart_app")}</IonLabel>
                 </IonItem>
                 <IonItem>
                   <IonIcon icon={shareSocialOutline} slot="start" />
-                  <IonLabel>Share App</IonLabel>
+                  <IonLabel>{t("share_app")}</IonLabel>
                 </IonItem>
               </IonContent>
             </IonPopover>
           </IonButtons>
-          <IonTitle onClick={() => history.push('/labour-dashboard')}>{t("title")}</IonTitle>
+          <IonTitle onClick={() => history.push("/labour-dashboard")}>
+            {t("title")}
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent>
-        {/* <IonToolbar>
-          <IonSearchbar autocomplete="on" id="search_bar" value={searchText} onIonChange={(e) =>
-            setSearchText(e.detail.value!)}
-            animated
-            placeholder="Search"
-          ></IonSearchbar>
-        </IonToolbar> */}
-
         <IonModal
           ref={modal2}
           isOpen={isOpen_2}
@@ -153,7 +146,7 @@ const SelectedServices: React.FC = () => {
         >
           <IonToolbar>
             <IonTitle className={classes.paddingTitleSchedule}>
-              Schedule your service
+              {t("Schedule_your_service")}
             </IonTitle>
           </IonToolbar>
           <br />
@@ -169,7 +162,7 @@ const SelectedServices: React.FC = () => {
                     onClick={() => modal2.current?.dismiss()}
                     color="danger"
                   >
-                    Cancel
+                    {t("cancel")}
                   </IonButton>
                 </IonCol>
                 <IonCol size="2" offset="1.5">
@@ -180,7 +173,7 @@ const SelectedServices: React.FC = () => {
                     }}
                     color="success"
                   >
-                    Done
+                    {t("done")}
                   </IonButton>
                 </IonCol>
               </IonRow>
@@ -203,7 +196,7 @@ const SelectedServices: React.FC = () => {
                 slot="end"
                 color="secondary"
               >
-                Close
+                {t("close")}
               </IonButton>
             </IonButtons>
           </IonToolbar>
@@ -218,15 +211,15 @@ const SelectedServices: React.FC = () => {
                       color="danger"
                       onClick={() =>
                         presentAlert({
-                          header: "Are you sure?",
+                          header: t("Are_you_sure?"),
                           cssClass: "custom-alert",
                           buttons: [
                             {
-                              text: "No",
+                              text: t("no"),
                               cssClass: "alert-button-cancel",
                             },
                             {
-                              text: "Yes",
+                              text: t("yes"),
                               cssClass: "alert-button-confirm",
                               handler: () => {
                                 setIsOpen(false);
@@ -237,7 +230,7 @@ const SelectedServices: React.FC = () => {
                         })
                       }
                     >
-                      RAPID
+                      {t("rapid")}
                     </IonButton>
                   </IonCol>
                   <IonCol size="3" offset="0.5">
@@ -246,22 +239,22 @@ const SelectedServices: React.FC = () => {
                       color="warning"
                       onClick={() =>
                         presentAlert({
-                          header: "Are you sure?",
+                          header: t("Are_you_sure?"),
                           cssClass: "custom-alert",
                           buttons: [
                             {
-                              text: "No",
+                              text: t("no"),
                               cssClass: "alert-button-cancel",
                             },
                             {
-                              text: "Yes",
+                              text: t("yes"),
                               cssClass: "alert-button-confirm",
                             },
                           ],
                         })
                       }
                     >
-                      MODERATE
+                      {t("moderate")}
                     </IonButton>
                   </IonCol>
                   <IonCol size="3" offset="0.5">
@@ -273,7 +266,7 @@ const SelectedServices: React.FC = () => {
                         setIsOpen_2(true);
                       }}
                     >
-                      SCHEDULE
+                      {t("schedule")}
                     </IonButton>
                   </IonCol>
                 </IonRow>
@@ -284,12 +277,11 @@ const SelectedServices: React.FC = () => {
 
         <IonGrid className={classes.gridServiceContainer}>
           <IonRow>
-
             <IonCol size="6">
               <SelectServiceBtn
                 onClick={() => {
-                  setIsOpen(true)
-                  service = "Electrician"
+                  setIsOpen(true);
+                  service = "Electrician";
                 }}
                 text={t("electrician")}
               />
@@ -297,8 +289,8 @@ const SelectedServices: React.FC = () => {
             <IonCol size="6">
               <SelectServiceBtn
                 onClick={() => {
-                  setIsOpen(true)
-                  service = "Plumber"
+                  setIsOpen(true);
+                  service = "Plumber";
                 }}
                 text={t("plumber")}
               />
@@ -309,8 +301,8 @@ const SelectedServices: React.FC = () => {
             <IonCol size="6">
               <SelectServiceBtn
                 onClick={() => {
-                  setIsOpen(true)
-                  service = "Mason"
+                  setIsOpen(true);
+                  service = "Mason";
                 }}
                 text={t("mason")}
               />
@@ -318,8 +310,8 @@ const SelectedServices: React.FC = () => {
             <IonCol size="6">
               <SelectServiceBtn
                 onClick={() => {
-                  setIsOpen(true)
-                  service = "Carpenter"
+                  setIsOpen(true);
+                  service = "Carpenter";
                 }}
                 text={t("carpenter")}
               />
@@ -329,8 +321,8 @@ const SelectedServices: React.FC = () => {
             <IonCol size="6">
               <SelectServiceBtn
                 onClick={() => {
-                  setIsOpen(true)
-                  service = "Painter"
+                  setIsOpen(true);
+                  service = "Painter";
                 }}
                 text={t("painter")}
               />
@@ -338,8 +330,8 @@ const SelectedServices: React.FC = () => {
             <IonCol size="6">
               <SelectServiceBtn
                 onClick={() => {
-                  setIsOpen(true)
-                  service = "pest Controller"
+                  setIsOpen(true);
+                  service = "Pest Controller";
                 }}
                 text={t("pest_controller")}
               />
