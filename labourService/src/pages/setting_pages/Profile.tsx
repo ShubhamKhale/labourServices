@@ -14,6 +14,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { t } from "i18next";
 import { chevronBackOutline, createOutline } from "ionicons/icons";
 import React, { useState } from "react";
 import ProfilePhoto from "../../components/ProfilePhoto";
@@ -27,15 +28,15 @@ interface Food {
 const foods: Food[] = [
   {
     id: 1,
-    name: "Male",
+    name: t("Male"),
   },
   {
     id: 2,
-    name: "Female",
+    name: t("Female"),
   },
   {
     id: 3,
-    name: "Other",
+    name: t("Other"),
   },
 ];
 
@@ -69,7 +70,7 @@ const Profile: React.FC = () => {
               {isEditable ? "Edit" : "Save"}
             </IonButton>
           </IonButtons>
-          <IonTitle>Profile</IonTitle>
+          <IonTitle>{t("Profile")}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
@@ -80,59 +81,59 @@ const Profile: React.FC = () => {
             mode="ios"
             position="floating"
           >
-            First Name
+            {t("First_Name")}
           </IonLabel>
           <IonInput
             type="text"
-            placeholder={"Sailesh"}
-            readonly={isEditable}
+            placeholder={"Enter your first name here"}
+            // readonly={isEditable}
             clearInput={true}
-            value="Priyanshu"
+            value=""
             inputMode="text"
           ></IonInput>
         </IonItem>
 
         <IonItem>
           <IonLabel color="dark" position="floating">
-            Last Name
+            {t("Last_Name")}
           </IonLabel>
           <IonInput
             type="text"
-            placeholder={"Prajapati"}
-            readonly={isEditable}
+            placeholder={"Enter your last name here"}
+            // readonly={isEditable}
             clearInput={true}
-            value="Maurya"
+            value=""
             inputMode="text"
           ></IonInput>
         </IonItem>
 
         <IonItem>
           <IonLabel color="dark" position="floating">
-            Email
+            {t("Email")}
           </IonLabel>
           <IonInput
             type="email"
-            placeholder={"prajapati45@gmail.com"}
-            readonly={isEditable}
+            placeholder={"xyz@gmail.com"}
+            // readonly={isEditable}
             clearInput={true}
-            value="pr17anshu@gmail.com"
+            value=""
             inputMode="email"
           ></IonInput>
         </IonItem>
 
         <IonItem>
-          <IonLabel position="floating">Date Of Birth</IonLabel>
+          <IonLabel position="floating">{t("Date_Of_Birth")}</IonLabel>
           <IonInput
             type="date"
-            readonly={isEditable}
+            // readonly={isEditable}
             clearInput={true}
-            value="15/07/2003"
+            value=""
             clearOnEdit={false}
           ></IonInput>
         </IonItem>
 
         <IonItem>
-          <IonLabel>Gender</IonLabel>
+          <IonLabel>{t("Gender")}</IonLabel>
           <IonList>
             <IonItem style={{ fontSize: "20px" }}>
               <IonSelect
@@ -142,7 +143,7 @@ const Profile: React.FC = () => {
                   setCurrentFood(JSON.stringify(ev.detail.value.food))
                 }
                 interface="popover"
-                disabled={isEditable}
+                // disabled={isEditable}
                 selectedText={currentFood}
               >
                 {foods.map((food) => (

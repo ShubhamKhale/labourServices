@@ -3,6 +3,7 @@ import OtpInput from 'react-otp-input';
 import { IonButton, IonContent, IonIcon, IonPage } from '@ionic/react';
 import { chatbubbleEllipsesOutline, logoWhatsapp } from "ionicons/icons";
 import classes from './Otp.module.css';
+import { t } from 'i18next';
 
 const Otp: React.FC = () => {
   
@@ -15,7 +16,7 @@ const Otp: React.FC = () => {
   return (
     <IonPage>
       <IonContent style={{textAlign: "center"}}>
-        <h2 style={{marginTop : "5rem"}}>Enter Verfication code</h2>
+        <h2 style={{marginTop : "5rem"}}>{t("Enter_Verfication_code")}</h2>
         
         <OtpInput value={otp} onChange={handleChange} numInputs={4} separator={<span></span>} placeholder={"    "} shouldAutoFocus={true}
         // containerStyle={"otpContainer"}
@@ -23,12 +24,12 @@ const Otp: React.FC = () => {
         isInputNum={true} 
         />
         
-        <h3>Didn't get OTP? Resend via</h3>
+        <h3>{t("Didn't_get_OTP?_Resend_via")}</h3>
         <div className={classes.msgApplicationLogos}>
           <IonIcon icon={chatbubbleEllipsesOutline} size="large"/>
           <IonIcon icon={logoWhatsapp} size="large"/>
         </div>
-        <IonButton className={classes.confirmBtn}>Confirm</IonButton>
+        <IonButton className={classes.confirmBtn}>{t("Confirm")}</IonButton>
       </IonContent>
     </IonPage>
   );

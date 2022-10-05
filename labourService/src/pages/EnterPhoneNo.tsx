@@ -13,6 +13,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { t } from "i18next";
 import ProfilePhoto from "../components/ProfilePhoto";
 
 // import { squareOutline } from "ionicons/icons";
@@ -28,20 +29,20 @@ const EnterPhoneNo: React.FC = () => {
       <IonContent>
         <ProfilePhoto/>
         <br />
-        <IonToolbar className={classes.ion_content}>
+        <IonToolbar className={classes.ion_phone_content}>
           <IonTitle>
             <h1>
-              <strong>Enter the Phone number</strong>
+              <h6>{t("Enter_the_Phone_number")}</h6>
             </h1>
           </IonTitle>
           <IonTitle size="large">
-            This number will be use for the
+            {t("This number will be use for the")}
             <br />
-            verification
+            {t("verification")}
           </IonTitle>
         </IonToolbar>
         <IonItem className={classes.ion_item_border}>
-          <b>+91</b>
+          <b>{t("+91")}</b>
           <IonInput
             type="number"
             inputmode="tel"
@@ -53,7 +54,7 @@ const EnterPhoneNo: React.FC = () => {
           ></IonInput>
         </IonItem>
         <IonButton className={classes.ion_button} color="secondary" size="large">
-          SEND OTP
+          {t("SEND_OTP")}
         </IonButton>
       </IonContent>
     </IonPage>

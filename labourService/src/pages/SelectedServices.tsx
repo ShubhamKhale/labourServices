@@ -87,7 +87,7 @@ const SelectedServices: React.FC = () => {
 
   const presentToast = (position: "top" | "middle" | "bottom") => {
     present({
-      message: "Your service has been scheduled sucessfully",
+      message: t("Your_service_has_been_scheduled_sucessfully"),
       duration: 3000,
       position: position,
       color: "medium",

@@ -1,4 +1,5 @@
 import { IonAccordion, IonItem, IonAvatar, IonImg, IonLabel, IonIcon, IonButton, IonCardContent } from "@ionic/react";
+import { t } from "i18next";
 import { pin } from "ionicons/icons";
 import { prependOnceListener } from "process";
 
@@ -11,26 +12,25 @@ function ServiceCustomer(props : {
             <IonAvatar slot="start">
                 <IonImg src={props.image} />
             </IonAvatar>
-            <IonLabel>Completed Services</IonLabel>
+            <IonLabel>{t("Completed_Service")}</IonLabel>
         </IonItem>
         <div slot="content">
             <IonItem>
                 <IonIcon icon={pin} slot="start" />
-                <IonLabel>15/07/2003</IonLabel>
+                <IonLabel>{t("15/07/2003")}</IonLabel>
                 <IonIcon icon={pin} slot="middle" />
-                <IonLabel>12:00 PM</IonLabel>
+                <IonLabel>{t("12:00 PM")}</IonLabel>
             </IonItem>
             <IonItem>
                 <IonIcon icon={pin} slot="start" />
-                <IonLabel>ion-item in a card, icon left, button right</IonLabel>
+                <IonLabel>{t("ion-item in a card, icon left, button right")}</IonLabel>
                 <IonButton fill="outline" slot="end">
-                    View
+                    {t("View")}
                 </IonButton>
             </IonItem>
 
             <IonCardContent>
-                This is content, without any paragraph or header tags, within an
-                ion-cardContent element.
+                {t("This is content, without any paragraph or header tags, within an ion-cardContent element.")}
             </IonCardContent>
         </div>
     </IonAccordion>

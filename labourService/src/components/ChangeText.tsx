@@ -1,8 +1,9 @@
+import { t } from "i18next";
 import { useState, useCallback, useEffect } from "react";
 const names = [
-  "Finding Labour Nearby you...",
-  "Fetching results...",
-  "Getting Information....",
+  t("Finding Labour Nearby you..."),
+  t("Fetching results..."),
+  t("Getting Information...."),
 ];
 
 function ChangeText() {

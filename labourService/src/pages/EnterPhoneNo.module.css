@@ -14,21 +14,19 @@
     position: fixed;
 } */
 
-.ion_title{
-    line-height: 40px;
-    padding-left: 50px;
-}
 
-.ion_content{
-    margin-top: 8rem;
+
+.ion_phone_content{
+    margin-top: 1px;
     padding: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
 
 .ion_button{
     margin-left: 7.5rem;
-    margin-top: 20rem;
+    margin-top: 10rem;
     --border-radius: 10px;
+    align-items: center;
 }
 
 b{
