@@ -1,10 +1,12 @@
 .text1{
     text-align: center;
     margin-top: 60%;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .ion_button_center{
     padding-left: 4.5rem;
     margin-top: 40%;
-    position: fixed;
+    position: relative;
 }

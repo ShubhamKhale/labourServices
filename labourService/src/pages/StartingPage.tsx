@@ -20,7 +20,7 @@ const StaringPage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonItem className={classes.text1}>
+        <IonItem className={classes.text1} lines="none">
           <b>
             {
               "Book Services like Electrician, plumber, Painter, Carpenter, Mason at your fingure tips."
