@@ -34,10 +34,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AppLogoCard from "../../components/AppLogoCard";
 import classes from "./About.module.css";
-
+import { t } from "i18next";
 const About: React.FC = () => {
   const [loaded, setLoaded] = useState(false);
-  const lazyImgLoadingStyle = { height: '150px', 'width': '150px', 'border-radius': '25px' };
+  const lazyImgLoadingStyle = {
+    height: "150px",
+    width: "150px",
+    "border-radius": "25px",
+  };
 
   setTimeout(() => setLoaded(true), 500);
   return (
@@ -47,49 +51,52 @@ const About: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/" icon={chevronBackOutline} />
           </IonButtons>
-          <IonTitle>About</IonTitle>
+          <IonTitle>{t("about")}</IonTitle>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent >
+      <IonContent>
         <div className={classes.acard}>
           <div className={classes.acard_image}>
-
             {loaded && <img src="https://i.redd.it/b3esnz5ra34y.jpg" />}
 
-            {!loaded && <IonSkeletonText animated={true} style={lazyImgLoadingStyle}></IonSkeletonText>}
+            {!loaded && (
+              <IonSkeletonText
+                animated={true}
+                style={lazyImgLoadingStyle}
+              ></IonSkeletonText>
+            )}
           </div>
         </div>
         <div className={classes.acard_title}>
           {/* <p style={{textAlign:'center',fontSize:'15px',marginBottom:'0px'}}>0.8.3</p> */}
-          Labour Services
+          {t("title")}
         </div>
         <IonCard>
           <IonCardHeader>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-            <IonCardTitle>Card Title</IonCardTitle>
+            <IonCardSubtitle>{t("Card_Subtitle")}</IonCardSubtitle>
+            <IonCardTitle>{t("Card_Title")}</IonCardTitle>
           </IonCardHeader>
 
           <IonCardContent>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit
-            clean.
+            {t(
+              "Keep close to Nature's heart... and break clear away, once in awhile,and climb a mountain or spend a week in the woods. Wash your spirit clean."
+            )}
           </IonCardContent>
         </IonCard>
-
 
         <IonCard>
           <Link to={"/setting/theme"}>
             <IonItem>
               <IonIcon icon={newspaperOutline} slot="start" />
-              <IonLabel>Terms and Condtions</IonLabel>
+              <IonLabel>{t("Terms_and_Condtions")}</IonLabel>
             </IonItem>
           </Link>
 
           <Link to={"/setting/theme"}>
             <IonItem>
               <IonIcon icon={bodyOutline} slot="start" />
-              <IonLabel>Open Source Library</IonLabel>
+              <IonLabel>{t("Open_Source_Library")}</IonLabel>
             </IonItem>
           </Link>
 
@@ -97,26 +104,27 @@ const About: React.FC = () => {
             <IonAccordion value="first" color="light">
               <IonItem slot="header" color="light">
                 <IonIcon icon={helpOutline} slot="start" />
-                <IonLabel>Help</IonLabel>
+                <IonLabel>{t("Help")}</IonLabel>
               </IonItem>
               <div className={classes.ion_padding} slot="content">
                 <IonItem>
                   <IonIcon icon={pin} slot="start" />
-                  <IonLabel>15/07/2003</IonLabel>
+                  <IonLabel>{t("15/07/2003")}</IonLabel>
                   <IonIcon icon={pin} slot="middle" />
-                  <IonLabel>12:00 PM</IonLabel>
+                  <IonLabel>{t("12:00 PM")}</IonLabel>
                 </IonItem>
                 <IonItem>
                   <IonIcon icon={pin} slot="start" />
-                  <IonLabel>ion-item in a card, icon left, button right</IonLabel>
+                  <IonLabel>
+                    {t("ion-item in a card, icon left")}
+                  </IonLabel>
                   <IonButton fill="outline" slot="end">
-                    View
+                    {t("View")}
                   </IonButton>
                 </IonItem>
 
                 <IonCardContent>
-                  This is content, without any paragraph or header tags, within an
-                  ion-cardContent element.
+                  {t("This is content, without any paragraph or header tags, within an ion-cardContent element.")}
                 </IonCardContent>
               </div>
             </IonAccordion>
@@ -124,7 +132,7 @@ const About: React.FC = () => {
         </IonCard>
         <IonCard style={{ padding: "10px" }}>
           <IonCardHeader>
-            <IonCardSubtitle>Follow us on</IonCardSubtitle>
+            <IonCardSubtitle>{t("Follow_us_on")}</IonCardSubtitle>
           </IonCardHeader>
 
           <div className={classes.cards_list}>
@@ -137,12 +145,17 @@ const About: React.FC = () => {
             <AppLogoCard icon={logoGithub} to="https://github.com/" />
           </div>
         </IonCard>
-        <IonCard href={"mailto:labourservices.report@gmail.com?&subject=I got this error&body=Here Provide the discription of the Error or Problem and also attach few  or short video (in case of error) for more clarity"}>
+        <IonCard
+          href={
+            "mailto:labourservices.report@gmail.com?&subject=I got this error&body=Here Provide the discription of the Error or Problem and also attach few  or short video (in case of error) for more clarity"
+          }
+        >
           <IonCardHeader>
-
-            <IonCardSubtitle>Report a Error</IonCardSubtitle>
+            <IonCardSubtitle>{t("Report_a_Error")}</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent><>labourservices.report@gmail.com</></IonCardContent>
+          <IonCardContent>
+            <>{t("labourservices.report@gmail.com")}</>
+          </IonCardContent>
 
           {/* "mailto:labourservices.report@gmail.com?&subject=I got this error&body=Here Provide the discription of the Error or Problem and also attach few  or short video (in case of error) for more clarity" */}
         </IonCard>

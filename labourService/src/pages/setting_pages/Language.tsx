@@ -16,6 +16,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { t } from "i18next";
 import { add, arrowBackCircle, arrowForwardCircle, arrowUpCircle, chevronBackOutline, logoFacebook, logoInstagram, logoTwitter, logoVimeo, person, settings, share } from "ionicons/icons";
 import React from "react";
 
@@ -27,7 +28,7 @@ const Language: React.FC = () => {
           <IonButtons slot="start">
             <IonBackButton defaultHref="/" icon={chevronBackOutline} />
           </IonButtons>
-          <IonTitle>Language</IonTitle>
+          <IonTitle>{t("Language")}</IonTitle>
         </IonToolbar>
       </IonHeader>
 

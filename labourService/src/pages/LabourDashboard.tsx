@@ -27,6 +27,7 @@ import { pin, settingsOutline } from "ionicons/icons";
 import { useState } from "react";
 import ServiceCount from "../components/ServiceCount";
 import ServiceCustomer from "../components/ServiceCustomer";
+import { t } from "i18next";
 const LabourDashboard: React.FC = () => {
   const [labourStatusMode, setLabourStatusMode] = useState("warning");
   const [labourStatus, setLabourStatus] = useState("INACTIVE");
@@ -68,7 +69,7 @@ const LabourDashboard: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>
-            Labour Services
+            {t("title")}
           </IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -78,18 +79,18 @@ const LabourDashboard: React.FC = () => {
           <IonButton className={classes.labourStatus} size="large" color={labourStatusMode} onClick={changeStatus}>{labourStatus}</IonButton>
           <IonRow>
             <IonCol onClick={viewCompletedServicesContent}>
-              <ServiceCount servicesCount={completedServicesCount} serviceName="Completed Service" color="#FBE7C6"/>
+              <ServiceCount servicesCount={completedServicesCount} serviceName={t("Completed_Service")} color="#FBE7C6"/>
             </IonCol>
             <IonCol onClick={viewPendingServicesContent}>
-              <ServiceCount servicesCount={pendingServicesCount} serviceName="Pending Service" color="#B4F8C8"/>
+              <ServiceCount servicesCount={pendingServicesCount} serviceName={t("Pending_Service")} color="#B4F8C8"/>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol onClick={viewScheduleServicesContent}>
-              <ServiceCount servicesCount={scheduleServicesCount} serviceName="Schedule Service" color="#A0E7E5" />
+              <ServiceCount servicesCount={scheduleServicesCount} serviceName={t("Schedule_Service")} color="#A0E7E5" />
             </IonCol>
             <IonCol onClick={viewPenaltyContent}>
-              <ServiceCount servicesCount={penaltyCount} serviceName="penalties" color="#FFAEBC"/>
+              <ServiceCount servicesCount={penaltyCount} serviceName={t("penalties")} color="#FFAEBC"/>
             </IonCol>
           </IonRow>
         </IonGrid>

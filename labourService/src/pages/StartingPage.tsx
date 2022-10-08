@@ -7,6 +7,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
+import { t } from "i18next";
 import { Link } from "react-router-dom";
 import classes from "./StartingPage.module.css";
 
@@ -15,19 +16,20 @@ const StaringPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Starting Page</IonTitle>
+          <IonTitle>{t("Starting_Page")}</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        <IonItem className={classes.text1}>
+        <IonItem className={classes.text1} lines="none">
           <b>
-            Book Services like Electrician, plumber, Painter, Carpenter, Mason
-            at your fingure tips.
+            {
+              "Book Services like Electrician, plumber, Painter, Carpenter, Mason at your fingure tips."
+            }
           </b>
         </IonItem>
         <Link to={"/enter-phone-no"}>
           <IonButton className={classes.ion_button_center} color="tertiary">
-            Continue with Phone no.
+            {t("Continue_with_Phone_no.")}
           </IonButton>
         </Link>
       </IonContent>
