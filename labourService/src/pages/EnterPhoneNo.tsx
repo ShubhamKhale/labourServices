@@ -14,6 +14,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { t } from "i18next";
+import { Link } from "react-router-dom";
 import ProfilePhoto from "../components/ProfilePhoto";
 
 // import { squareOutline } from "ionicons/icons";
@@ -53,9 +54,11 @@ const EnterPhoneNo: React.FC = () => {
             placeholder="Enter number"
           ></IonInput>
         </IonItem>
+        <Link to={"/otp"}>
         <IonButton className={classes.ion_button} color="secondary" size="large">
           {t("SEND_OTP")}
         </IonButton>
+        </Link>
       </IonContent>
     </IonPage>
   );
