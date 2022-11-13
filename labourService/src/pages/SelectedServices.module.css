@@ -140,27 +140,6 @@ ion-modal#example-modal {
     flex-direction: column;
 }
 
-.serviceCard{
-  width: 160px;
-    height: 100px;
-    text-align: center;
-    background-color: gold;
-    border-radius: 15px;
-    margin-left: 12px;
-    margin-top: 14px;
-}
-
-.ion_text_center{
-  margin-top: 2rem;
-}
-/* .serviceCardRight{
-  margin-left: 7px;
-    margin-top: 14px;
-}
-.serviceCardLeft{
-  margin-right: 7px;
-    margin-top: 14px;
-} */
 
 #head1{
   text-align: center;
@@ -199,7 +178,7 @@ ion-slides {
 }
 
 img{
-  border-radius: 25px;
+  border-radius: 10px;
   position: absolute;
   opacity: 1;
 }
@@ -210,6 +189,23 @@ a{
   text-decoration: none;
   font-family: 'Times New Roman', Times, serif;
   font-size: 2rem;
+}
+.padding{
+   padding-left: 10px;
+ }
+
+.paddingTitleSchedule{
+   padding-left: 20px;
+ }
+
+.paddingSchedule{
+  /* padding: 30px; */
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 1px;
+  position: sticky;
+  margin-bottom: 20px;
+  margin-left: 21px;
 }
 
 
