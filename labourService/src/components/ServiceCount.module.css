@@ -1,0 +1,10 @@
+.card{
+    border: 2px solid lightslategrey;
+    text-align: center;
+    width: 9rem;
+    height: 9rem;
+    background-color: lightgrey;
+    margin-right: 12.5px;
+    margin-left: 12.5px;
+    border-radius: 11px;
+}

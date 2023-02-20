@@ -1,4 +1,4 @@
-.profile-image {
+.profile_image {
     margin-top: 1.5em;
     width: 124px;
     height: 124px;
@@ -6,7 +6,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1.5em;
-    border-radius: 200%;
   }
   
 

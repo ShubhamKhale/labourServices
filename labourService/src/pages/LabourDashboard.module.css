@@ -1,0 +1,77 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+
+
+.appName{
+    margin-right: 11rem;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.labourStatus{
+    margin-left:23%;
+    margin-right:23%;
+    width: 50%;
+    --border-radius: 50px;
+}
+
+.gridContainer{
+    margin-top: 4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.serviceTitle{
+    padding-left: 17px;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.serviceContent{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.serviceContentRow2{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 2rem;
+}
+
+.serviceLocation{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.serviceLocation p{
+    margin-left: 5px;
+    position: relative;
+    bottom: 2px;
+}
+
+.serviceDate{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.serviceDate p{
+    margin-left: 5px;
+}
+
+.serviceTime{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.serviceTime p{
+    margin-left: 5px;
+}

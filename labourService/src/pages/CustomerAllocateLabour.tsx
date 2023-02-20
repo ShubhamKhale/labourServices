@@ -1,27 +1,49 @@
-import React, { useRef } from 'react';
-import {IonIcon,IonFabButton,IonButton,IonModal,IonContent,IonPage,IonProgressBar} from '@ionic/react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { IonIcon, IonFabButton, IonButton, IonModal, IonContent, IonPage, IonProgressBar } from '@ionic/react';
 import ProfilePhoto from '../components/ProfilePhoto';
 import ChangeText from '../components/ChangeText';
 import { arrowBackOutline } from 'ionicons/icons';
-import './CustomerAllocateLabour.css';
+import classes from './CustomerAllocateLabour.module.css';
+import { useHistory } from 'react-router-dom';
+import { t } from 'i18next';
 
 function CustomerAllocateLabour() {
   const modal = useRef<HTMLIonModalElement>(null);
+  const history = useHistory();
+  const [modelOpen, setModelOpen] = useState(false);
+
+  useLayoutEffect(() => setModelOpen(true));
+
+  function closeModal() {
+    modal.current?.dismiss();
+    history.push('/')
+  }
   return (
-    <IonPage>
+    <IonPage >
       <IonContent className="ion-padding">
-      <IonFabButton size="small" className="backfab" color="light">
-        <IonIcon icon={arrowBackOutline} />
+        <IonFabButton size="small" onClick={() => closeModal()} className={classes.backfab} color="light">
+          <IonIcon icon={arrowBackOutline} />
         </IonFabButton>
-        <IonButton id="open-modal" expand="block">
-          Open Sheet Modal
-        </IonButton>
-        <IonModal ref={modal} trigger="open-modal" initialBreakpoint={0.35} breakpoints={[0,0.25,0.35]} showBackdrop={false}>
+        <IonModal
+          ref={modal}
+          isOpen={modelOpen}
+          initialBreakpoint={0.35}
+          breakpoints={[0, 0.25, 0.35]}
+          showBackdrop={false}
+          backdropBreakpoint={0.75}
+          onDidDismiss={() => setModelOpen(false)}
+
+        >
           <IonContent className="ion-padding">
-             <ChangeText /><br/>
-          <IonProgressBar type="indeterminate"></IonProgressBar><br/>
-          <ProfilePhoto />
-            <IonButton className="button" expand="block" color="danger">Cancel</IonButton>
+            <ChangeText /><br />
+            <IonProgressBar type="indeterminate"></IonProgressBar><br />
+            <ProfilePhoto />
+            <IonButton
+              onClick={() => closeModal()}
+              className={classes.button}
+              expand="block"
+              color="danger"
+            >{t("cancel")}</IonButton>
           </IonContent>
         </IonModal>
       </IonContent>

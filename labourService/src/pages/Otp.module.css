@@ -1,0 +1,29 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+input {
+    border: 3px solid lightslategray;
+    background-color: #fff;
+    margin: 21px;
+    padding-left: 10px;
+    padding-right: 0px;
+    height: 55px;
+    font-size: 2.5rem;
+    border-radius: 11px;
+}
+
+.msgApplicationLogos{
+    margin-top: 1.5rem;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmBtn{
+    margin-top: 2.5rem;
+    width: 14rem;
+    height: 3rem;
+}
