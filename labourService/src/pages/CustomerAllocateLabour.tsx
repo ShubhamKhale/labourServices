@@ -19,6 +19,7 @@ function CustomerAllocateLabour() {
   }
   return (
     <IonPage >
+      <GoogleMapComponent />
       <IonContent className="ion-padding">
         <IonFabButton size="small" onClick={() => closeModal()} className={classes.backfab} color="light">
           <IonIcon icon={arrowBackOutline} />
